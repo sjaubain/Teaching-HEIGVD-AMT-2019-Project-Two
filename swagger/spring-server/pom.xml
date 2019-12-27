@@ -46,6 +46,9 @@
                             <configOptions>
                                 <sourceFolder>src/gen/java/main</sourceFolder>
                                 <interfaceOnly>true</interfaceOnly>
+                                <basePackage>ch.heigvd.authentication</basePackage>
+                                <modelPackage>ch.heigvd.authentication.api.dto</modelPackage>
+                                <apiPackage>ch.heigvd.authentication.api</apiPackage>
                             </configOptions>
                         </configuration>
                     </execution>
