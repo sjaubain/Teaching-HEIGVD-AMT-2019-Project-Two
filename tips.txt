@@ -1,0 +1,4 @@
+live reload : 
+
+* spring-boot devtools dependency
+* ctrl-shft-A -> registry -> compiler.automake...  WARNING : remove after this project
