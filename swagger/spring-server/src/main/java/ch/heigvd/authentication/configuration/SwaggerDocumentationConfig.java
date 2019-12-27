@@ -1,4 +1,4 @@
-package io.swagger.configuration;
+package ch.heigvd.authentication.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,8 +33,8 @@ public class SwaggerDocumentationConfig {
                 .select()
                     .apis(RequestHandlerSelectors.basePackage("io.swagger.api"))
                     .build()
-                .directModelSubstitute(org.threeten.bp.LocalDate.class, java.sql.Date.class)
-                .directModelSubstitute(org.threeten.bp.OffsetDateTime.class, java.util.Date.class)
+                .directModelSubstitute(org.joda.time.LocalDate.class, java.sql.Date.class)
+                .directModelSubstitute(org.joda.time.LocalDate.class, java.util.Date.class)
                 .apiInfo(apiInfo());
     }
 

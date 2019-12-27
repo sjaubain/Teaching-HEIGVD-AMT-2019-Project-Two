@@ -1,4 +1,4 @@
-package io.swagger;
+package ch.heigvd.authentication;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.ExitCodeGenerator;
@@ -10,7 +10,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@ComponentScan(basePackages = { "io.swagger", "io.swagger.api" , "io.swagger.configuration"})
+@ComponentScan(basePackages = { "ch.heigvd.authentication", "ch.heigvd.authentication.api" , "ch.heigvd.authentication.configuration"})
 public class Swagger2SpringBoot implements CommandLineRunner {
 
     @Override
