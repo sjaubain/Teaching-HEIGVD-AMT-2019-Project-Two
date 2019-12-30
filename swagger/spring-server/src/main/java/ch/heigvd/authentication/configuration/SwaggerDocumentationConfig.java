@@ -17,8 +17,8 @@ public class SwaggerDocumentationConfig {
 
     ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-            .title("fruits")
-            .description("fruits")
+            .title("users")
+            .description("the users accounts manager")
             .license("")
             .licenseUrl("http://unlicense.org")
             .termsOfServiceUrl("")
@@ -29,13 +29,15 @@ public class SwaggerDocumentationConfig {
 
     @Bean
     public Docket customImplementation(){
+
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                    .apis(RequestHandlerSelectors.basePackage("io.swagger.api"))
+                    .apis(RequestHandlerSelectors.basePackage("ch.heigvd.authentication.api"))
                     .build()
                 .directModelSubstitute(org.joda.time.LocalDate.class, java.sql.Date.class)
                 .directModelSubstitute(org.joda.time.LocalDate.class, java.util.Date.class)
                 .apiInfo(apiInfo());
+
     }
 
 }
