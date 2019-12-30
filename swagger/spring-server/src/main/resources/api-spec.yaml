@@ -9,6 +9,18 @@ schemes:
   - http
 paths:
   /users:
+    get:
+      description: get the list of all users
+      operationId: getUsers
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
     post:
       description: create a user
       operationId: createUser
@@ -25,17 +37,22 @@ paths:
           description: created
           schema:
             type: object
+  /users/email:
     get:
-      description: get the list of all users
-      operationId: getUsers
+      description: get user by email
+      operationId: getUserByEmail
       produces:
         - application/json
+      parameters:
+        - name: email
+          in: query
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: success
           schema:
-            type: array
-            items:
               $ref: '#/definitions/User'
 definitions:
   User:
