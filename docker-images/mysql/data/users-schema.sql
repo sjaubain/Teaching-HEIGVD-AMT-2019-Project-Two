@@ -17,6 +17,11 @@ CREATE TABLE amt_user (
   PRIMARY KEY(email)
 );
   
+  
+INSERT INTO amt_user (firstName, lastName, username, password, email, is_admin, is_locked)
+VALUES ("Simon", "Jobin", "sjaubain", "$2a$10$TwAvxHMClpMq2cWBvvb49eKogrXmmdgbX9cNaggdOdIEQoAJ/og52",
+"simon.jobin@bluewin.ch", true, false);
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

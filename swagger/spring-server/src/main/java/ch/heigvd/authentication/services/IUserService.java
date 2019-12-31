@@ -17,6 +17,8 @@ public interface IUserService {
 
     String generateJWT(User userClaims);
 
+    User decodeJWT(String jwt);
+
     UserEntity toUserEntity(User user);
 
     User toUser(UserEntity userEntity);

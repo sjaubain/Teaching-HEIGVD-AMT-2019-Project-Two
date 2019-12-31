@@ -20,6 +20,9 @@ import java.util.List;
 @Service
 public class UserService implements IUserService{
 
+    //TODO: share it with the second API
+    private static final String SECRET_KEY = "secret";
+
     @Autowired
     private UserRepository userRepository;
 
@@ -68,7 +71,7 @@ public class UserService implements IUserService{
     @Override
     public String generateJWT(User userClaims) {
 
-        Algorithm algorithm = Algorithm.HMAC256("secret");
+        Algorithm algorithm = Algorithm.HMAC256(SECRET_KEY);
 
         try {
 
@@ -85,13 +88,6 @@ public class UserService implements IUserService{
             // signature
             String signature = DatatypeConverter.printBase64Binary(algorithm.sign(header.getBytes(), claims.getBytes()));
 
-
-            /*
-            JWTVerifier verifier = JWT.require(algorithm).build(); 
-            DecodedJWT tokenJWT = verifier.verify( header + "." + claims + "." + signature);
-            System.out.println(tokenJWT.getClaim("email").asString());
-            */
-
             return "accessToken : " + header + "." + claims + "." + signature;
 
         } catch (JsonProcessingException e) {
@@ -99,6 +95,23 @@ public class UserService implements IUserService{
         }
 
         return null;
+    }
+
+    /**
+     * Decode the given JWT and check it
+     * @param jwt the jwt
+     * @return the User corresponding
+     * to the jwt
+     */
+    @Override
+    public User decodeJWT(String jwt) {
+
+        Algorithm algorithm = Algorithm.HMAC256(SECRET_KEY);
+
+        JWTVerifier verifier = JWT.require(algorithm).build();
+        DecodedJWT tokenJWT = verifier.verify(jwt);
+
+        return toUser(userRepository.findById(tokenJWT.getClaim("email").asString()).get());
     }
 
     /**

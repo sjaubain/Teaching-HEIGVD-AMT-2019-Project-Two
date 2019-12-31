@@ -37,19 +37,25 @@ public class UserController implements UsersApi {
         this.request = request;
     }
 
-
     @Override
-    public ResponseEntity<Object> createUser(User user) {
+    public ResponseEntity<Object> createUser(String JWT, User user) {
 
-        // TODO: check the admin role before doing that
+        User postingUser = userService.decodeJWT(JWT);
 
-        userService.createUser(user);
+        // check if user has the rights to create a new one (is admin)
+        if(postingUser.getIsAdmin()) {
 
-        URI location = ServletUriComponentsBuilder
-                .fromCurrentRequest().path("/{email}")
-                .buildAndExpand(user).toUri();
+            userService.createUser(user);
 
-        return ResponseEntity.created(location).build();
+            URI location = ServletUriComponentsBuilder
+                    .fromCurrentRequest().path("/{email}")
+                    .buildAndExpand(user).toUri();
+
+            return ResponseEntity.created(location).build();
+
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
     }
 
     @Override

@@ -27,6 +27,11 @@ paths:
       consumes:
         - application/json
       parameters:
+        - name: JWT
+          in: query
+          required: true
+          schema:
+            $ref: '#/definitions/JWT'
         - name: user
           in: body
           required: true

@@ -9,9 +9,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class AuthenticateController implements AuthenticateApi {
 
+
+    @Autowired
+    private HttpServletRequest context;
 
     @Autowired
     private UserService userService;
