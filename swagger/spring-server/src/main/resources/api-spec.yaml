@@ -37,7 +37,7 @@ paths:
           description: created
           schema:
             type: object
-  /users/email:
+  /users/{email}:
     get:
       description: get user by email
       operationId: getUserByEmail
@@ -54,6 +54,29 @@ paths:
           description: success
           schema:
               $ref: '#/definitions/User'
+  /authenticate:
+    post:
+      description: authenticate a user
+      operationId: authenticate
+      consumes:
+        - application/json
+      parameters:
+        - name: userCredentials
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/UserCredentials'
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+            items:
+              $ref: '#/definitions/JWT'
+        '400':
+          description: bad request
+        '401':
+          description: unauthorized
 definitions:
   User:
     type: object
@@ -62,7 +85,26 @@ definitions:
         type: string
       lastname:
         type: string
+      username:
+        type: string
       email:
         type: string
       password:
+        type: string
+        required: true
+      isAdmin:
+        type: boolean
+      isLocked:
+        type: boolean
+  UserCredentials:
+    type: object
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+  JWT:
+    type: object
+    properties:
+      jwt:
         type: string

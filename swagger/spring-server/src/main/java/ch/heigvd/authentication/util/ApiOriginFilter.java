@@ -1,4 +1,4 @@
-package ch.heigvd.authentication.api;
+package ch.heigvd.authentication.util;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletResponse;

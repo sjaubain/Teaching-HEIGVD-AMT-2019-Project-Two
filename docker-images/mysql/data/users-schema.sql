@@ -7,11 +7,13 @@ CREATE SCHEMA users;
 USE users;
 
 CREATE TABLE amt_user (
-  firstName VARCHAR(45),
-  lastName VARCHAR(45),
-  username VARCHAR(45),
-  password VARCHAR(45),
-  email VARCHAR(45) NOT NULL,
+  firstName VARCHAR(16),
+  lastName VARCHAR(16),
+  username VARCHAR(16),
+  password VARCHAR(100),
+  email VARCHAR(64) NOT NULL,
+  is_admin BOOLEAN,
+  is_locked BOOLEAN,
   PRIMARY KEY(email)
 );
   
