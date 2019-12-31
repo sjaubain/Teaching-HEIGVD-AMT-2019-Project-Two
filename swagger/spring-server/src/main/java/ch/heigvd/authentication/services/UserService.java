@@ -3,12 +3,17 @@ package ch.heigvd.authentication.services;
 import ch.heigvd.authentication.api.dto.User;
 import ch.heigvd.authentication.entities.UserEntity;
 import ch.heigvd.authentication.repositories.UserRepository;
+import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.interfaces.DecodedJWT;
+import com.auth0.jwt.interfaces.JWTVerifier;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Base64;
+import javax.xml.bind.DatatypeConverter;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -54,18 +59,46 @@ public class UserService implements IUserService{
         return ret;
     }
 
+    /**
+     * Generate a Json Web Token according to
+     * specifications with the user as claim payload
+     * @param userClaims User info to be stringify
+     * @return the Json Web Token
+     */
     @Override
     public String generateJWT(User userClaims) {
 
         Algorithm algorithm = Algorithm.HMAC256("secret");
 
-        // jwt header
-        byte[] header = Base64.getEncoder().encode("{\"alg\":\"HMAC256\",\"typ\":\"JWT\"}".getBytes());
+        try {
 
-        // jwt claims
-        byte[] claims = Base64.getEncoder().encode(userClaims.toString().getBytes());
+            // jwt header
+            String header = DatatypeConverter.printBase64Binary("{\"alg\":\"HS256\",\"typ\":\"JWT\"}".getBytes());
 
-        return "accessToken " + algorithm.sign(header, claims).toString();
+            // jwt claims
+            ObjectMapper objectMapper = new ObjectMapper();
+
+            // stringify user object
+            String userToJson = objectMapper.writeValueAsString(userClaims);
+            String claims = DatatypeConverter.printBase64Binary(userToJson.getBytes());
+
+            // signature
+            String signature = DatatypeConverter.printBase64Binary(algorithm.sign(header.getBytes(), claims.getBytes()));
+
+
+            /*
+            JWTVerifier verifier = JWT.require(algorithm).build(); 
+            DecodedJWT tokenJWT = verifier.verify( header + "." + claims + "." + signature);
+            System.out.println(tokenJWT.getClaim("email").asString());
+            */
+
+            return "accessToken : " + header + "." + claims + "." + signature;
+
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     /**
