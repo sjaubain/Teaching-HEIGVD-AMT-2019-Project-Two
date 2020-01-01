@@ -27,8 +27,8 @@ paths:
       consumes:
         - application/json
       parameters:
-        - name: JWT
-          in: query
+        - name: Authorization
+          in: header
           required: true
           schema:
             $ref: '#/definitions/JWT'
@@ -49,6 +49,11 @@ paths:
       produces:
         - application/json
       parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            $ref: '#/definitions/JWT'
         - name: email
           in: query
           required: true

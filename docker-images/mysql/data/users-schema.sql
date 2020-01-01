@@ -21,6 +21,18 @@ CREATE TABLE amt_user (
 INSERT INTO amt_user (firstName, lastName, username, password, email, is_admin, is_locked)
 VALUES ("Simon", "Jobin", "sjaubain", "$2a$10$TwAvxHMClpMq2cWBvvb49eKogrXmmdgbX9cNaggdOdIEQoAJ/og52",
 "simon.jobin@bluewin.ch", true, false);
+INSERT INTO amt_user (firstName, lastName, username, password, email, is_admin, is_locked)
+VALUES ("Pierre", "Dupont", "pdupont", "$2a$10$TwAvxHMClpMq2cWBvvb49eKogrXmmdgbX9cNaggdOdIEQoAJ/og52",
+"pierre.dupont@bluewin.ch", false, false);
+INSERT INTO amt_user (firstName, lastName, username, password, email, is_admin, is_locked)
+VALUES ("Olaf", "Reutype", "olaf", "$2a$10$TwAvxHMClpMq2cWBvvb49eKogrXmmdgbX9cNaggdOdIEQoAJ/og52",
+"olaf.reutype@gmail.com", false, false);
+INSERT INTO amt_user (firstName, lastName, username, password, email, is_admin, is_locked)
+VALUES ("Ivan", "Destrucs", "ives", "$2a$10$TwAvxHMClpMq2cWBvvb49eKogrXmmdgbX9cNaggdOdIEQoAJ/og52",
+"ivan.destrucs@gmail.com", false, false);
+INSERT INTO amt_user (firstName, lastName, username, password, email, is_admin, is_locked)
+VALUES ("Alex", "Terieur", "alex", "$2a$10$TwAvxHMClpMq2cWBvvb49eKogrXmmdgbX9cNaggdOdIEQoAJ/og52",
+"alex.terieur@gmail.com", false, false);
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

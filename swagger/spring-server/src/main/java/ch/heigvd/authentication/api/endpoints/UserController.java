@@ -38,12 +38,12 @@ public class UserController implements UsersApi {
     }
 
     @Override
-    public ResponseEntity<Object> createUser(String JWT, User user) {
+    public ResponseEntity<Object> createUser(String authorization, User user) {
 
-        User postingUser = userService.decodeJWT(JWT);
+        User postingUser = userService.decodeJWT(authorization);
 
         // check if user has the rights to create a new one (is admin)
-        if(postingUser.getIsAdmin()) {
+        if(postingUser != null && postingUser.getIsAdmin()) {
 
             userService.createUser(user);
 
@@ -59,14 +59,27 @@ public class UserController implements UsersApi {
     }
 
     @Override
-    public ResponseEntity<User> getUserByEmail(String email) {
+    public ResponseEntity<User> getUserByEmail(String authorization, String email) {
 
-        User user = userService.getUserByEmail(email);
+        User askingUser = userService.decodeJWT(authorization);
 
-        if(user == null)
+        if(askingUser == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+
+        // check if it is the user's token
+        try {
+            User user = userService.getUserByEmail(email);
+
+            if(user.getEmail().equals(askingUser.getEmail())) {
+                return new ResponseEntity<>(user, HttpStatus.ACCEPTED);
+            } else {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            }
+
+        } catch(Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        else
-            return new ResponseEntity<>(user, HttpStatus.ACCEPTED);
+        }
     }
 
     @Override

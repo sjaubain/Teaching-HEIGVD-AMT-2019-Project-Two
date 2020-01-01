@@ -108,10 +108,16 @@ public class UserService implements IUserService{
 
         Algorithm algorithm = Algorithm.HMAC256(SECRET_KEY);
 
-        JWTVerifier verifier = JWT.require(algorithm).build();
-        DecodedJWT tokenJWT = verifier.verify(jwt);
+        try {
 
-        return toUser(userRepository.findById(tokenJWT.getClaim("email").asString()).get());
+            JWTVerifier verifier = JWT.require(algorithm).build();
+            DecodedJWT tokenJWT = verifier.verify(jwt);
+
+            return toUser(userRepository.findById(tokenJWT.getClaim("email").asString()).get());
+
+        } catch(Exception e) {
+            return null;
+        }
     }
 
     /**
