@@ -1,15 +1,16 @@
 package ch.heigvd.authentication.api.spec.steps;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import ch.heigvd.authentication.ApiException;
 import ch.heigvd.authentication.ApiResponse;
 import ch.heigvd.authentication.api.DefaultApi;
+import ch.heigvd.authentication.api.dto.User;
 import ch.heigvd.authentication.api.spec.helpers.Environment;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Created by Olivier Liechti on 27/07/17.
@@ -19,8 +20,7 @@ public class CreationSteps {
     private Environment environment;
     private DefaultApi api;
 
-
-    //Fruit fruit;
+    User user;
 
     private ApiResponse lastApiResponse;
     private ApiException lastApiException;
@@ -32,37 +32,37 @@ public class CreationSteps {
         this.api = environment.getApi();
     }
 
-    @Given("^there is a Fruits server$")
-    public void there_is_a_Fruits_server() throws Throwable {
-        //assertNotNull(api);
+    @Given("^there is a User server$")
+    public void there_is_a_User_server() {
+        assertNotNull(api);
     }
 
-    @Given("^I have a fruit payload$")
-    public void i_have_a_fruit_payload() throws Throwable {
-        //fruit = new io.avalia.fruits.api.dto.Fruit();
+    @Given("^I have a user payload$")
+    public void i_have_a_user_payload() throws Throwable {
+        user = new ch.heigvd.authentication.api.dto.User();
     }
 
-    @When("^I POST it to the /fruits endpoint$")
-    public void i_POST_it_to_the_fruits_endpoint() throws Throwable {
-        //try {
+    @When("I POST it to the \\/users endpoint with invalid token")
+    public void i_POST_it_to_the_authenticate_endpoint() throws Throwable {
 
-            //lastApiResponse = api.createFruitWithHttpInfo(fruit);
-            //lastApiCallThrewException = false;
-            //lastApiException = null;
-            //lastStatusCode = lastApiResponse.getStatusCode();
+        try {
 
-        //} catch (ApiException e) {
-            //lastApiCallThrewException = true;
-            //lastApiResponse = null;
-            //lastApiException = e;
-            //lastStatusCode = lastApiException.getCode();
-        //}
+            lastApiResponse = api.createUserWithHttpInfo("invalidToken", user.username("sjaubain"));
+            lastApiCallThrewException = false;
+            lastApiException = null;
+            lastStatusCode = lastApiResponse.getStatusCode();
 
+        } catch (ApiException e) {
+
+            lastApiCallThrewException = true;
+            lastApiResponse = null;
+            lastApiException = e;
+            lastStatusCode = lastApiException.getCode();
+        }
     }
 
     @Then("^I receive a (\\d+) status code$")
     public void i_receive_a_status_code(int arg1) throws Throwable {
-        assertEquals(201, lastStatusCode);
+        assertEquals(arg1, lastStatusCode);
     }
-
 }

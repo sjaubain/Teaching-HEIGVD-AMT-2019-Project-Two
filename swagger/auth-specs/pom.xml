@@ -48,10 +48,10 @@
                                 <sourceFolder>.</sourceFolder>
                                 <dateLibrary>joda</dateLibrary>
                                 <basePackage>ch.heigvd.authentication</basePackage>
-                                <modelPackage>ch.heigvd.authentication.dto</modelPackage>
+                                <modelPackage>ch.heigvd.authentication.api.dto</modelPackage>
                                 <apiPackage>ch.heigvd.authentication.api</apiPackage>
                             </configOptions>
-                            <output>target/generated-sources/swagger</output>
+                            <output>target/generated-sources/openapitools</output>
                         </configuration>
                     </execution>
                 </executions>
