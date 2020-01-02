@@ -12,9 +12,6 @@ import io.cucumber.java.en.When;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-/**
- * Created by Olivier Liechti on 27/07/17.
- */
 public class CreationSteps {
 
     private Environment environment;

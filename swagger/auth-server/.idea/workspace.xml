@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad5c2c77-9e48-4349-8f1f-4ca90b6f481a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/authentication/api/spec/steps/AuthenticationSteps.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../auth-specs/src/test/resources/scenarios/authentication.feature" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/../auth-specs/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../auth-specs/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../auth-specs/executableSpecification.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../auth-specs/fruitsSpecification.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../auth-specs/pom.xml" afterPath="$PROJECT_DIR$/../auth-specs/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/../auth-specs/src/main/resources/api-spec.yaml" afterPath="$PROJECT_DIR$/../auth-specs/src/main/resources/api-spec.yaml" />
-      <change beforePath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/authentication/api/spec/helpers/Environment.java" afterPath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/authentication/api/spec/helpers/Environment.java" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/authentication/api/spec/steps/AuthenticationSteps.java" afterPath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/authentication/api/spec/steps/AuthenticationSteps.java" />
       <change beforePath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/authentication/api/spec/steps/CreationSteps.java" afterPath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/authentication/api/spec/steps/CreationSteps.java" />
-      <change beforePath="$PROJECT_DIR$/../auth-specs/src/test/resources/environment.properties" afterPath="$PROJECT_DIR$/../auth-specs/src/test/resources/environment.properties" />
-      <change beforePath="$PROJECT_DIR$/../auth-specs/src/test/resources/scenarios/creation.feature" afterPath="$PROJECT_DIR$/../auth-specs/src/test/resources/scenarios/creation.feature" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/src/test/resources/scenarios/authentication.feature" afterPath="$PROJECT_DIR$/../auth-specs/src/test/resources/scenarios/authentication.feature" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/api/endpoints/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state relative-caret-position="-369">
+              <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,10 +97,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/target/generated-sources/swagger/src/gen/java/main/ch/heigvd/authentication/api/dto/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
+            <state relative-caret-position="-63">
               <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding />
             </state>
@@ -587,12 +580,12 @@
       <workItem from="1577963378532" duration="695000" />
       <workItem from="1577966134203" duration="2000" />
       <workItem from="1577966153239" duration="6412000" />
-      <workItem from="1577981458869" duration="3001000" />
+      <workItem from="1577981458869" duration="4377000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81613000" />
+    <option name="totallyTimeSpent" value="82989000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -623,7 +616,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.8631699" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47206384" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -852,16 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/api/endpoints/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/api/endpoints/AuthenticateController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -872,9 +855,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/target/generated-sources/swagger/src/gen/java/main/ch/heigvd/authentication/api/dto/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
+        <state relative-caret-position="-63">
           <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/api/endpoints/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-369">
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
