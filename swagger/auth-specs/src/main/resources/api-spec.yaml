@@ -1,0 +1,117 @@
+swagger: '2.0'
+info:
+  version: '0.1.0'
+  title: my simple api
+  description: An API to manage users accounts
+host: localhost:8080
+basePath: /api
+schemes:
+  - http
+paths:
+  /users:
+    get:
+      description: get the list of all users
+      operationId: getUsers
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+    post:
+      description: create a user
+      operationId: createUser
+      consumes:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+        - name: user
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        '201':
+          description: created
+          schema:
+            type: object
+  /users/{email}:
+    get:
+      description: get user by email
+      operationId: getUserByEmail
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+        - name: email
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: success
+          schema:
+              $ref: '#/definitions/User'
+  /authenticate:
+    post:
+      description: authenticate a user
+      operationId: authenticate
+      consumes:
+        - application/json
+      parameters:
+        - name: userCredentials
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/UserCredentials'
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+            items:
+              $ref: '#/definitions/JWT'
+        '400':
+          description: bad request
+        '401':
+          description: unauthorized
+definitions:
+  User:
+    type: object
+    properties:
+      firstname:
+        type: string
+      lastname:
+        type: string
+      username:
+        type: string
+      email:
+        type: string
+      password:
+        type: string
+        required: true
+      isAdmin:
+        type: boolean
+      isLocked:
+        type: boolean
+  UserCredentials:
+    type: object
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+  JWT:
+    type: object
+    properties:
+      jwt:
+        type: string
