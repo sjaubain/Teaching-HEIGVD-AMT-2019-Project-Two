@@ -1,0 +1,54 @@
+swagger: '2.0'
+info:
+  version: '0.1.0'
+  title: my simple api v.2
+  description: An API to rate movies
+host: localhost:9090
+basePath: /api
+schemes:
+  - http
+paths:
+  /movies:
+    get:
+      description: get the list of all movies
+      operationId: getMovies
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Movie'
+definitions:
+  Movie:
+    type: object
+    properties:
+      movie_id:
+        type: int
+      title:
+        type: string
+      description:
+        type: string
+      director:
+        type: string
+  User:
+    type: object
+    properties:
+      email:
+        type: string
+  Rating:
+    type: object
+    properties:
+      rating_id:
+        type: int
+      user_id:
+        type: string
+      movie_id:
+        type: int
+      rating:
+        type: int
+      description:
+        type: stirng
+

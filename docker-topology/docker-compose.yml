@@ -1,0 +1,31 @@
+version: '3'
+services:
+    
+    mysql_users:
+        build: ../docker-images/mysql/users
+        environment: 
+            - MYSQL_ROOT_PASSWORD=admin
+            - MYSQL_USER=admin
+            - MYSQL_PASSWORD=admin
+            - MYSQL_DATABASE=users
+        ports:
+            - "3306:3306" 
+    mysql_movies:
+        build: ../docker-images/mysql/movies
+        environment: 
+            - MYSQL_ROOT_PASSWORD=admin
+            - MYSQL_USER=admin
+            - MYSQL_PASSWORD=admin
+            - MYSQL_DATABASE=movies
+        ports:
+            - "3307:3307"  
+    phpmyadmin:
+        build: ../docker-images/phpmyadmin
+        environment:
+            - MYSQL_ROOT_PASSWORD=admin
+        ports:
+            - "6060:80"
+        links:
+            - mysql_users:db_users
+            - mysql_movies:db_movies
+   
