@@ -11,6 +11,7 @@ cd ..
 cd docker-topology
 docker-compose down
 docker-compose up --build
+echo 'creating mysql containers and populate movies database'
 
 # then start all tests (after docker-compose
 # because the databases and the spring projects
