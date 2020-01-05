@@ -64,7 +64,7 @@ paths:
           description: success
           schema:
               $ref: '#/definitions/User'
-  /authenticate:
+  /authentication:
     post:
       description: authenticate a user
       operationId: authenticate

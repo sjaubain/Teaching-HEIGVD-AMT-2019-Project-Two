@@ -1,6 +1,21 @@
 version: '3'
 services:
-    
+    auth-server:
+        build: ../docker-images/spring-boot/authentication
+        environment:
+            SPRING_DATASOURCE_URL: jdbc:mysql://mysql_users:3306/users?autoReconnect=true&failOverReadOnly=false&maxReconnects=10&useSSL=false
+            SPRING_DATASOURCE_USERNAME: admin
+            SPRING_DATASOURCE_PASSWORD: admin
+        ports:
+            - "8080:8080"
+    movies-server:
+        build: ../docker-images/spring-boot/movies
+        environment:
+            SPRING_DATASOURCE_URL: jdbc:mysql://mysql_movies:3306/movies?autoReconnect=true&failOverReadOnly=false&maxReconnects=10&useSSL=false
+            SPRING_DATASOURCE_USERNAME: admin
+            SPRING_DATASOURCE_PASSWORD: admin
+        ports:
+            - "9090:9090"
     mysql_users:
         build: ../docker-images/mysql/users
         environment: 
@@ -22,6 +37,7 @@ services:
     phpmyadmin:
         build: ../docker-images/phpmyadmin
         environment:
+            - MYSQL_USER=admin
             - MYSQL_ROOT_PASSWORD=admin
         ports:
             - "6060:80"

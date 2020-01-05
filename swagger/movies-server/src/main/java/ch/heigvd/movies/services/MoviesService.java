@@ -6,6 +6,8 @@ import ch.heigvd.movies.entities.MovieEntity;
 import ch.heigvd.movies.entities.UserEntity;
 import ch.heigvd.movies.repositories.MoviesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
@@ -23,8 +25,10 @@ public class MoviesService implements IMoviesService {
     @Override
     public List<Movie> getAllMovies() {
 
+        Pageable pageable = PageRequest.of(1, 10);
+
         List<Movie> ret = new LinkedList<>();
-        Iterable<MovieEntity> allMovies = moviesRepository.findAll();
+        Iterable<MovieEntity> allMovies = moviesRepository.findAll(pageable);
         for(MovieEntity movieEntity : allMovies) {
             ret.add(toMovie(movieEntity));
         }
