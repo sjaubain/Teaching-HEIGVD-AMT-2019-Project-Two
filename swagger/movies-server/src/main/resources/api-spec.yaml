@@ -3,7 +3,7 @@ info:
   version: '0.1.0'
   title: my simple api v.2
   description: An API to rate movies
-host: localhost:9090
+host: localhost:9191
 basePath: /api
 schemes:
   - http
@@ -14,6 +14,17 @@ paths:
       operationId: getMovies
       produces:
         - application/json
+      parameters:
+        - name: keyword
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            $ref: '#/definitions/JWT'
       responses:
         '200':
           description: success
@@ -21,6 +32,61 @@ paths:
             type: array
             items:
               $ref: '#/definitions/Movie'
+  /movies/{ratings}:
+    get:
+      description: get all ratings for a specific movie
+      operationId: getRatingsByMovie
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            $ref: '#/definitions/JWT'
+        - name: MovieId
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Rating'
+    post:
+      description: rate a movie
+      operationId: addRating
+      consumes:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            $ref: '#/definitions/JWT'
+        - name: MovieId
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: rating
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: description
+          in: body
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: created
+          schema:
+            type: object
 definitions:
   Movie:
     type: object
@@ -42,13 +108,17 @@ definitions:
     type: object
     properties:
       rating_id:
-        type: int
+        type: integer
       user_id:
         type: string
       movie_id:
-        type: int
+        type: integer
       rating:
-        type: int
+        type: integer
       description:
-        type: stirng
-
+        type: string
+  JWT:
+    type: object
+    properties:
+      jwt:
+        type: string

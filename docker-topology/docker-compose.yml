@@ -7,12 +7,12 @@ services:
             SPRING_DATASOURCE_USERNAME: admin
             SPRING_DATASOURCE_PASSWORD: admin
         ports:
-            - "8080:8080"
+            - "9090:9090"
         labels:
             - "traefik.enable=true"
-            - "traefik.ports=8080"
+            - "traefik.ports=9090"
             - "traefik.http.routers.auth_server.entrypoints=web"
-            - "traefik.http.routers.auth_server.rule=PathPrefix(`/api/users/`)"
+            - "traefik.http.routers.auth_server.rule=PathPrefix(`/api/users`,`/api/authentication`,`/api/usersapi`)"
     movies_server:
         build: ../docker-images/spring-boot/movies
         environment:
@@ -20,12 +20,12 @@ services:
             SPRING_DATASOURCE_USERNAME: admin
             SPRING_DATASOURCE_PASSWORD: admin
         ports:
-            - "9090:9090"
+            - "9191:9191"
         labels:
             - "traefik.enable=true"
-            - "traefik.ports=9090"
+            - "traefik.ports=9191"
             - "traefik.http.routers.movies_server.entrypoints=web"
-            - "traefik.http.routers.movies_server.rule=PathPrefix(`/api/movies`)"
+            - "traefik.http.routers.movies_server.rule=PathPrefix(`/api/movies`,`/api/moviesapi`)"
     mysql_users:
         build: ../docker-images/mysql/users
         environment: 
@@ -64,7 +64,7 @@ services:
             - "--entrypoints.web.address=:80"
         ports:
             - "80:80"
-            - "8181:8080"
+            - "8080:8080"
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
            

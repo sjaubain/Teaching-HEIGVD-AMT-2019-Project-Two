@@ -1,10 +1,18 @@
 package ch.heigvd.movies.services;
 
 import ch.heigvd.movies.api.dto.Movie;
+import ch.heigvd.movies.api.dto.Rating;
 import ch.heigvd.movies.api.dto.User;
 import ch.heigvd.movies.entities.MovieEntity;
+import ch.heigvd.movies.entities.RatingEntity;
 import ch.heigvd.movies.entities.UserEntity;
 import ch.heigvd.movies.repositories.MoviesRepository;
+import ch.heigvd.movies.repositories.RatingsRepository;
+import ch.heigvd.movies.repositories.UsersRepository;
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.interfaces.DecodedJWT;
+import com.auth0.jwt.interfaces.JWTVerifier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -13,6 +21,11 @@ import org.springframework.stereotype.Service;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * This class is the 'main' services class
+ * that regroups all types of services (user, rating
+ * and movie)
+ */
 @Service
 public class MoviesService implements IMoviesService {
 
@@ -22,22 +35,47 @@ public class MoviesService implements IMoviesService {
     @Autowired
     private MoviesRepository moviesRepository;
 
-    @Override
-    public List<Movie> getAllMovies() {
+    @Autowired
+    private UsersRepository usersRepository;
 
-        Pageable pageable = PageRequest.of(1, 10);
+    @Autowired
+    private RatingsRepository ratingsRepository;
+
+    /**
+     * retrieve movies with description containing
+     * the keyword, if specified.
+     * @param keyword query keyword
+     * @return the list of retrieved movies
+     */
+    @Override
+    public List<Movie> getAllMovies(String keyword) {
+
+        Pageable pageable = PageRequest.of(1, 100);
 
         List<Movie> ret = new LinkedList<>();
         Iterable<MovieEntity> allMovies = moviesRepository.findAll(pageable);
         for(MovieEntity movieEntity : allMovies) {
-            ret.add(toMovie(movieEntity));
+            if(keyword != "" && keyword != null) {
+
+                // if a keyword is specified
+                if(movieEntity.getDescription().contains(keyword)) {
+                    ret.add(toMovie(movieEntity));
+                }
+
+            } else {
+                // else return all retrieved movies
+                ret.add(toMovie(movieEntity));
+            }
         }
         return ret;
-    }
 
+    }
 
     /**
      * Decode the given JWT and check it
+     * Used to know if a user is authenticated
+     * to navigate through movies and perform
+     * CRUD actions
      * @param jwt the jwt
      * @return the User corresponding
      * to the jwt
@@ -45,13 +83,64 @@ public class MoviesService implements IMoviesService {
     @Override
     public User decodeJWT(String jwt) {
 
-       return null;
+        Algorithm algorithm = Algorithm.HMAC256(SECRET_KEY);
+
+        try {
+
+            JWTVerifier verifier = JWT.require(algorithm).build();
+            DecodedJWT tokenJWT = verifier.verify(jwt);
+
+            return new User().email(tokenJWT.getClaim("email").asString());
+
+        } catch(Exception e) {
+            return null;
+        }
+    }
+
+    @Override
+    public User getUserByEmail(String email) {
+
+        try {
+            return toUser(usersRepository.findById(email).get());
+        } catch(Exception e) {
+            return null;
+        }
+    }
+
+    @Override
+    public List<Rating> getRatingsByMovie(String movieId) {
+
+        try {
+
+            List<Rating> ret = new LinkedList<>();
+            Iterable<RatingEntity> ratings = ratingsRepository.getRatingsByMovieId(Integer.valueOf(movieId));
+            for(RatingEntity ratingEntity : ratings) {
+                ret.add(toRating(ratingEntity));
+            }
+            return ret;
+
+        } catch(Exception e) {
+            return null;
+        }
+    }
+
+    @Override
+    public void addRating(String userId, int movieId, int rating, String description) {
+
+        // when a user post a rating, he is automatically
+        // added in the db if not already saved
+        if(!usersRepository.findById(userId).isPresent()) {
+            usersRepository.save(new UserEntity(userId));
+        }
+
+        ratingsRepository.save(new RatingEntity(userId, movieId, rating, description));
+
     }
 
     @Override
     public MovieEntity toMovieEntity(Movie movie) {
         MovieEntity movieEntity = new MovieEntity();
-        movieEntity.setMovie_id(movie.getMovieId());
+        movieEntity.setMovieId(movie.getMovieId());
         movieEntity.setTitle(movie.getTitle());
         movieEntity.setDescription(movie.getDescription());
         movieEntity.setDirector(movie.getDirector());
@@ -61,11 +150,33 @@ public class MoviesService implements IMoviesService {
     @Override
     public Movie toMovie(MovieEntity movieEntity) {
         Movie movie = new Movie();
-        movie.setMovieId(movieEntity.getMovie_id());
+        movie.setMovieId(movieEntity.getMovieId());
         movie.setTitle(movieEntity.getTitle());
         movie.setDescription(movieEntity.getDescription());
         movie.setDirector(movieEntity.getDirector());
         return movie;
+    }
+
+    @Override
+    public RatingEntity toRatingEntity(Rating rating) {
+        RatingEntity ratingEntity = new RatingEntity();
+        ratingEntity.setDescription(rating.getDescription());
+        ratingEntity.setUserId(rating.getUserId());
+        ratingEntity.setMovieId(rating.getMovieId());
+        ratingEntity.setRating(rating.getRating());
+        ratingEntity.setRatingId(rating.getRatingId());
+        return ratingEntity;
+    }
+
+    @Override
+    public Rating toRating(RatingEntity ratingEntity) {
+        Rating rating = new Rating();
+        rating.setDescription(ratingEntity.getDescription());
+        rating.setMovieId(ratingEntity.getMovieId());
+        rating.setRating(ratingEntity.getRating());
+        rating.setUserId(ratingEntity.getUserId());
+        return rating;
+
     }
 
     /**
@@ -74,6 +185,7 @@ public class MoviesService implements IMoviesService {
      * @return the user entity
      */
     public UserEntity toUserEntity(User user) {
+
         //TODO: use a mapper would be cleaner
         UserEntity userEntity = new UserEntity();
         userEntity.setEmail(user.getEmail());

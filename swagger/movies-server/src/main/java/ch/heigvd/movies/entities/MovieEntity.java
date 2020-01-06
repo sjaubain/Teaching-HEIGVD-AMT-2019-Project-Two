@@ -16,7 +16,7 @@ public class MovieEntity {
 
     @Id
     @Column(name = "movie_id")
-    private int movie_id;
+    private int movieId;
 
     @Column(name = "title")
     private String title;

@@ -72,7 +72,8 @@ public class UserController implements UsersApi {
 
         if(user != null) {
 
-            if (user.getEmail().equals(askingUser.getEmail())) {
+            // if the user owns the information or if he is an admin
+            if (user.getEmail().equals(askingUser.getEmail()) || user.getIsAdmin()) {
                 return new ResponseEntity<>(user, HttpStatus.ACCEPTED);
             } else {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();

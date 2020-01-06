@@ -17,8 +17,8 @@ public class SwaggerDocumentationConfig {
 
     ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-            .title("users")
-            .description("the users accounts manager")
+            .title("movies")
+            .description("a way to search and rate movies")
             .license("")
             .licenseUrl("http://unlicense.org")
             .termsOfServiceUrl("")
