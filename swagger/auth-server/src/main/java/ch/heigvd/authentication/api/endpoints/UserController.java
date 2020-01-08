@@ -61,6 +61,9 @@ public class UserController implements UsersApi {
     @Override
     public ResponseEntity<User> getUserByEmail(String authorization, String email) {
 
+        if(authorization == null || email == null)
+            return ResponseEntity.noContent().build();
+
         User askingUser = userService.decodeJWT(authorization);
 
         if(askingUser == null) {

@@ -12,11 +12,11 @@ services:
             - "traefik.enable=true"
             - "traefik.ports=9090"
             - "traefik.http.routers.auth_server.entrypoints=web"
-            - "traefik.http.routers.auth_server.rule=PathPrefix(`/api/users`,`/api/authentication`,`/api/usersapi`)"
+            - "traefik.http.routers.auth_server.rule=PathPrefixStrip(`/api/usersapi`)"
     movies_server:
         build: ../docker-images/spring-boot/movies
         environment:
-            SPRING_DATASOURCE_URL: jdbc:mysql://mysql_movies:3306/movies?autoReconnect=true&failOverReadOnly=false&maxReconnects=10&useSSL=false
+            SPRING_DATASOURCE_URL: jdbc:mysql://mysql_movies:3306/movies?autoReconnect=true&failOverReadOnly=false&maxReconnects=10&useSSL=false          
             SPRING_DATASOURCE_USERNAME: admin
             SPRING_DATASOURCE_PASSWORD: admin
         ports:
@@ -25,7 +25,7 @@ services:
             - "traefik.enable=true"
             - "traefik.ports=9191"
             - "traefik.http.routers.movies_server.entrypoints=web"
-            - "traefik.http.routers.movies_server.rule=PathPrefix(`/api/movies`,`/api/moviesapi`)"
+            - "traefik.http.routers.movies_server.rule=Path(`/api/movies`,`/api/moviesapi`)"
     mysql_users:
         build: ../docker-images/mysql/users
         environment: 
@@ -43,17 +43,20 @@ services:
             - MYSQL_PASSWORD=admin
             - MYSQL_DATABASE=movies
         ports:
-            - "3307:3306"  
+            - "3307:3306" 
+        expose:
+            # Opens port 3306 on the container
+            - "3306" 
     phpmyadmin:
         build: ../docker-images/phpmyadmin
         environment:
             - MYSQL_USER=admin
+            - MYSQL_PASSWORD=admin
             - MYSQL_ROOT_PASSWORD=admin
+        links:
+            - mysql_movies:db
         ports:
             - "6060:80"
-        links:
-            - mysql_users:db_users
-            - mysql_movies:db_movies
     traefik:
         image: "traefik:v2.0.0"
         command:

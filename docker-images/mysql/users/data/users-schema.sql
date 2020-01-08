@@ -17,7 +17,9 @@ CREATE TABLE amt_user (
   PRIMARY KEY(email)
 );
   
-  
+INSERT INTO amt_user (firstName, lastName, username, password, email, is_admin, is_locked)
+VALUES ("Pierre", "Lexemple", "plexemple", "$2a$10$TwAvxHMClpMq2cWBvvb49eKogrXmmdgbX9cNaggdOdIEQoAJ/og52",
+"test@gmail.com", true, false);
 INSERT INTO amt_user (firstName, lastName, username, password, email, is_admin, is_locked)
 VALUES ("Simon", "Jobin", "sjaubain", "$2a$10$TwAvxHMClpMq2cWBvvb49eKogrXmmdgbX9cNaggdOdIEQoAJ/og52",
 "simon.jobin@bluewin.ch", true, false);
