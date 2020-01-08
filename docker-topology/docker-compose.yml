@@ -13,7 +13,7 @@ services:
             - "traefik.ports=9090"
             - "traefik.http.routers.auth_server.entrypoints=web"
             # we use a prefix path to load all needed web components for the swagger ui
-            - "traefik.http.routers.movies_server.rule=PathPrefix(`/users-api/`)"
+            - "traefik.http.routers.auth_server.rule=PathPrefix(`/users-api/`)"
     movies_server:
         build: ../docker-images/spring-boot/movies
         environment:
@@ -55,8 +55,7 @@ services:
             - MYSQL_USER=admin
             - MYSQL_PASSWORD=admin
             - MYSQL_ROOT_PASSWORD=admin
-        links:
-            - mysql_movies:db
+            - PMA_HOSTS=mysql_users,mysql_movies
         ports:
             - "6060:80"
     traefik:
