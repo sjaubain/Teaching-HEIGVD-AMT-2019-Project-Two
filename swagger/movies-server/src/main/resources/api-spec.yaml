@@ -4,7 +4,7 @@ info:
   title: my simple api v.2
   description: An API to rate movies
 host: localhost:9191
-basePath: /api
+basePath: /movies-api
 schemes:
   - http
 paths:

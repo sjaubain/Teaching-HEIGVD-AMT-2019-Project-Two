@@ -4,7 +4,7 @@ info:
   title: my simple api
   description: An API to manage users accounts
 host: localhost:8080
-basePath: /api
+basePath: /users-api
 schemes:
   - http
 paths:
