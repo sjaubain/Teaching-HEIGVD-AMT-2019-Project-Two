@@ -61,19 +61,12 @@ public class UserController implements UsersApi {
     @Override
     public ResponseEntity<User> getUserByEmail(String authorization, String email) {
 
-        if(authorization == null || email == null)
-            return ResponseEntity.noContent().build();
-
         User askingUser = userService.decodeJWT(authorization);
 
-        if(askingUser == null) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-        }
+        if(askingUser != null) {
 
-        // check if it is the user's token
-        User user = userService.getUserByEmail(email);
-
-        if(user != null) {
+            // check if it is the user's token
+            User user = userService.getUserByEmail(email);
 
             // if the user owns the information or if he is an admin
             if (user.getEmail().equals(askingUser.getEmail()) || user.getIsAdmin()) {
@@ -83,9 +76,8 @@ public class UserController implements UsersApi {
             }
 
         } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
-
     }
 
     @Override

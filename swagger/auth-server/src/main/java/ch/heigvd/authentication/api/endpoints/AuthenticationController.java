@@ -16,7 +16,7 @@ public class AuthenticationController implements AuthenticationApi {
 
 
     @Autowired
-    private HttpServletRequest context;
+    private HttpServletRequest request;
 
     @Autowired
     private UserService userService;

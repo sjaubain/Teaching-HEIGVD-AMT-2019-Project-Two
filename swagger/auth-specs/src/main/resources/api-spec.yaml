@@ -4,7 +4,7 @@ info:
   title: my simple api
   description: An API to manage users accounts
 host: localhost:8080
-basePath: /api
+basePath: /users-api
 schemes:
   - http
   - https
@@ -62,7 +62,7 @@ paths:
           description: success
           schema:
               $ref: '#/definitions/User'
-  /authenticate:
+  /authentication:
     post:
       description: authenticate a user
       operationId: authenticate

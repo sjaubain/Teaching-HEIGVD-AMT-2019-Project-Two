@@ -2,15 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad5c2c77-9e48-4349-8f1f-4ca90b6f481a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../../docker-images/spring-boot/authentication/swagger-spring-1.0.0.jar" afterPath="$PROJECT_DIR$/../../docker-images/spring-boot/authentication/swagger-spring-1.0.0.jar" />
-      <change beforePath="$PROJECT_DIR$/../../docker-images/spring-boot/movies/swagger-spring-1.0.0.jar" afterPath="$PROJECT_DIR$/../../docker-images/spring-boot/movies/swagger-spring-1.0.0.jar" />
-      <change beforePath="$PROJECT_DIR$/../../docker-topology/docker-compose.yml" afterPath="$PROJECT_DIR$/../../docker-topology/docker-compose.yml" />
+      <change beforePath="$PROJECT_DIR$/../../docker-images/mysql/users/data/users-schema.sql" afterPath="$PROJECT_DIR$/../../docker-images/mysql/users/data/users-schema.sql" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/api-spec.yaml" afterPath="$PROJECT_DIR$/src/main/resources/api-spec.yaml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/api/endpoints/AuthenticationController.java" afterPath="$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/api/endpoints/AuthenticationController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/api/endpoints/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/api/endpoints/UserController.java" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../auth-specs/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/pom.xml" afterPath="$PROJECT_DIR$/../auth-specs/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/src/main/resources/api-spec.yaml" afterPath="$PROJECT_DIR$/../auth-specs/src/main/resources/api-spec.yaml" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/authentication/api/spec/steps/AuthenticationSteps.java" afterPath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/authentication/api/spec/steps/AuthenticationSteps.java" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/authentication/api/spec/steps/CreationSteps.java" afterPath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/authentication/api/spec/steps/CreationSteps.java" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/src/test/resources/scenarios/authentication.feature" afterPath="$PROJECT_DIR$/../auth-specs/src/test/resources/scenarios/authentication.feature" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/src/test/resources/scenarios/creation.feature" afterPath="$PROJECT_DIR$/../auth-specs/src/test/resources/scenarios/creation.feature" />
       <change beforePath="$PROJECT_DIR$/../movies-server/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../movies-server/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../movies-server/src/main/resources/api-spec.yaml" afterPath="$PROJECT_DIR$/../movies-server/src/main/resources/api-spec.yaml" />
-      <change beforePath="$PROJECT_DIR$/../movies-server/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/../movies-server/src/main/resources/application.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +31,8 @@
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/api/endpoints/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1008">
-              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+            <state relative-caret-position="483">
+              <caret line="65" column="32" lean-forward="false" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -50,7 +53,7 @@
       <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/services/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2730">
+            <state relative-caret-position="2415">
               <caret line="145" column="34" lean-forward="false" selection-start-line="145" selection-start-column="34" selection-end-line="145" selection-end-column="34" />
               <folding />
             </state>
@@ -67,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+            <state relative-caret-position="189">
+              <caret line="9" column="60" lean-forward="false" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -87,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="api-spec.yaml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="api-spec.yaml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/api-spec.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            <state relative-caret-position="-1134">
+              <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -110,9 +113,11 @@
       <file leaf-file-name="AuthenticationController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/api/endpoints/AuthenticationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="420">
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -189,11 +194,11 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/services/IUserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/services/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/api/endpoints/AuthenticateController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/api/endpoints/AuthenticationController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/api/endpoints/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/configuration/HomeController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/api-spec.yaml" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/api/endpoints/AuthenticationController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/api/endpoints/UserController.java" />
       </list>
     </option>
   </component>
@@ -237,8 +242,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="976" />
+    <option name="x" value="304" />
+    <option name="y" value="198" />
+    <option name="width" value="1472" />
     <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -259,6 +265,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -361,7 +368,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -379,7 +385,7 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="RequestMappingsPanelOrder2" value="2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../auth-specs" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
   </component>
@@ -535,11 +541,12 @@
       <workItem from="1578437370177" duration="1028000" />
       <workItem from="1578477228577" duration="1973000" />
       <workItem from="1578495738876" duration="30000" />
+      <workItem from="1579253656890" duration="2432000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98912000" />
+    <option name="totallyTimeSpent" value="101344000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -565,12 +572,13 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47206384" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47206384" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2556391" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -583,7 +591,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -769,14 +776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/api/endpoints/AuthenticationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/services/IUserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -785,18 +784,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/services/UserService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/api/endpoints/AuthenticationController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2730">
-          <caret line="145" column="34" lean-forward="false" selection-start-line="145" selection-start-column="34" selection-end-line="145" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/api/endpoints/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        <state relative-caret-position="420">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -811,18 +802,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/api-spec.yaml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/api/endpoints/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="483">
+          <caret line="65" column="32" lean-forward="false" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+        <state relative-caret-position="189">
+          <caret line="9" column="60" lean-forward="false" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/authentication/services/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2415">
+          <caret line="145" column="34" lean-forward="false" selection-start-line="145" selection-start-column="34" selection-end-line="145" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/api-spec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1134">
+          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="20" />
           <folding />
         </state>
       </provider>

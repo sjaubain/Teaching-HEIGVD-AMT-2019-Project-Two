@@ -18,8 +18,11 @@ CREATE TABLE amt_user (
 );
   
 INSERT INTO amt_user (firstName, lastName, username, password, email, is_admin, is_locked)
-VALUES ("Pierre", "Lexemple", "plexemple", "$2a$10$TwAvxHMClpMq2cWBvvb49eKogrXmmdgbX9cNaggdOdIEQoAJ/og52",
-"test@gmail.com", true, false);
+VALUES ("Admin", "admin", "admin", "$2a$10$TwAvxHMClpMq2cWBvvb49eKogrXmmdgbX9cNaggdOdIEQoAJ/og52",
+"admin@gmail.com", true, false);
+INSERT INTO amt_user (firstName, lastName, username, password, email, is_admin, is_locked)
+VALUES ("Toto", "titi", "toto", "$2a$10$TwAvxHMClpMq2cWBvvb49eKogrXmmdgbX9cNaggdOdIEQoAJ/og52",
+"toto@gmail.com", true, false);
 INSERT INTO amt_user (firstName, lastName, username, password, email, is_admin, is_locked)
 VALUES ("Simon", "Jobin", "sjaubain", "$2a$10$TwAvxHMClpMq2cWBvvb49eKogrXmmdgbX9cNaggdOdIEQoAJ/og52",
 "simon.jobin@bluewin.ch", true, false);
