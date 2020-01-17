@@ -3,7 +3,10 @@ package ch.heigvd.authentication.api.spec.steps;
 import ch.heigvd.authentication.ApiException;
 import ch.heigvd.authentication.ApiResponse;
 import ch.heigvd.authentication.api.DefaultApi;
+import ch.heigvd.authentication.api.dto.UserCredentials;
 import ch.heigvd.authentication.api.spec.helpers.Environment;
+import com.google.inject.Singleton;
+
 
 /**
  * This class contains the context of the
@@ -11,6 +14,7 @@ import ch.heigvd.authentication.api.spec.helpers.Environment;
  * API response... It is shared between all
  * other steps classes (with picocontainer)
  */
+@Singleton
 public class Context {
 
     Environment environment;
@@ -20,6 +24,8 @@ public class Context {
     ApiException lastApiException;
     boolean lastApiCallThrewException;
     int lastStatusCode;
+    String lastToken;
+    UserCredentials lastCredentials;
 
     public Context(Environment environment) {
         this.environment = environment;

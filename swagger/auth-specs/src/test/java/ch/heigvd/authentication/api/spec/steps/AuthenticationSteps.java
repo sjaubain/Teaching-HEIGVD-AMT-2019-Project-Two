@@ -8,12 +8,10 @@ import static org.junit.Assert.assertNotNull;
 
 public class AuthenticationSteps {
 
-    private Context context;
-    private PayloadSteps payloadSteps;
+    Context context;
 
-    public AuthenticationSteps(PayloadSteps payloadSteps, Context context) {
+    public AuthenticationSteps(Context context) {
         this.context = context;
-        this.payloadSteps = payloadSteps;
     }
 
     @Given("^try to authenticate$")
@@ -27,7 +25,7 @@ public class AuthenticationSteps {
 
         try {
 
-            context.lastApiResponse = context.api.authenticateWithHttpInfo(payloadSteps.userCredentials);
+            context.lastApiResponse = context.api.authenticateWithHttpInfo(context.lastCredentials);
             context.lastApiCallThrewException = false;
             context.lastApiException = null;
             context.lastStatusCode = context.lastApiResponse.getStatusCode();

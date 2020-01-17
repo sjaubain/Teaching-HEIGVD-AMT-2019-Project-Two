@@ -14,13 +14,15 @@ public class ResponseSteps {
 
     @Then("I receive a {int} status code and a jwt")
     public void i_receive_a_status_code_and_a_jwt(int arg) {
-        assertEquals(context.lastStatusCode, arg);
+
+        assertEquals(arg, context.lastStatusCode);
         assertTrue(context.lastApiResponse.getData().toString().startsWith("accessToken"));
+        context.lastToken = context.lastApiResponse.getData().toString().substring(14);
     }
 
     @Then("I receive a {int} status code")
     public void i_receive_a_status_code(int arg) {
-        assertEquals(context.lastStatusCode, arg);
+        assertEquals(arg, context.lastStatusCode);
     }
 
 }

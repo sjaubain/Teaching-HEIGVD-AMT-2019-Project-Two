@@ -7,7 +7,6 @@ import io.cucumber.java.en.Given;
 public class PayloadSteps {
 
     Context context;
-    UserCredentials userCredentials;
 
     public PayloadSteps(Environment environment, Context context) {
         this.context = context;
@@ -15,11 +14,16 @@ public class PayloadSteps {
 
     @Given("^I have valid user credentials$")
     public void i_have_valid_user_credentials() {
-        userCredentials = new UserCredentials().email("simon.jobin@bluewin.ch").password("password");
+        context.lastCredentials = new UserCredentials().email("simon.jobin@bluewin.ch").password("password");
     }
 
     @Given("I have invalid user credentials")
     public void i_have_invalid_user_credentials() {
-        userCredentials = new UserCredentials().email("simon.jobin@bluewin.ch").password("invalid_password");
+        context.lastCredentials = new UserCredentials().email("simon.jobin@bluewin.ch").password("invalid_password");
+    }
+
+    @Given("^I have valid admin credentials$")
+    public void i_have_valid_admin_credentials() {
+        context.lastCredentials = new UserCredentials().email("simon.jobin@bluewin.ch").password("password");
     }
 }

@@ -55,7 +55,7 @@ paths:
           schema:
             $ref: '#/definitions/JWT'
         - name: email
-          in: query
+          in: path
           required: true
           schema:
             type: string
