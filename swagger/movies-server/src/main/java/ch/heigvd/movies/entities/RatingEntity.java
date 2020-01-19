@@ -3,6 +3,7 @@ package ch.heigvd.movies.entities;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.annotation.Generated;
 import javax.persistence.*;
 
 @Getter
@@ -11,9 +12,6 @@ import javax.persistence.*;
 @Table(name = "amt_rating")
 public class RatingEntity {
 
-    // Mauvais choix, mais pas trouvé comment
-    // faire autrement pour l'auto-incément (bugs sql...)
-    private static int nbRatings = 0;
     public RatingEntity() {}
 
     public RatingEntity(String userId, int movieId, int rating, String description) {
@@ -21,11 +19,11 @@ public class RatingEntity {
         this.movieId = movieId;
         this.rating = rating;
         this.description = description;
-        this.ratingId = nbRatings++;
     }
 
     @Id
-    @Column(name = "rating_id")
+    @Column(name = "rating_id", unique = true, nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer ratingId;
 
     @Column(name = "user_id")

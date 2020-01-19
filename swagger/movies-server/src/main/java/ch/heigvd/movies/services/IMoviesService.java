@@ -24,7 +24,7 @@ public interface IMoviesService {
 
     List<Rating> getRatingsByUserId(String userId);
 
-    void addRating(String userId, int movieId, int rating, String description);
+    Rating addRating(String userId, int movieId, int rating, String description);
 
     void updateRating(String ratingId, int newRating, String newDescription);
 

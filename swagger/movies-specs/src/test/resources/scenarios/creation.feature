@@ -1,9 +1,7 @@
-Feature: Creation of users
+Feature: Rating Creation
 
-  Background:
-    Given there is a User server
+  Scenario:
 
-  Scenario: create a user
-    Given I have a user payload
-    When I POST it to the /users endpoint with invalid token
-    Then I receive a 401 status code
+    Given I want to rate a movie with description "Bad" and rate 2
+    Then I POST my rating to the /movies/12 endpoint
+    Then I receive a 201 status code

@@ -1,13 +1,11 @@
-package ch.heigvd.authentication.api.spec.helpers;
+package ch.heigvd.movies.api.spec.helpers;
 
-import ch.heigvd.authentication.api.DefaultApi;
+import ch.heigvd.movies.api.DefaultApi;
 
 import java.io.IOException;
 import java.util.Properties;
 
-/**
- * Created by Olivier Liechti on 24/06/17.
- */
+
 public class Environment {
 
     private DefaultApi api = new DefaultApi();
@@ -15,7 +13,7 @@ public class Environment {
     public Environment() throws IOException {
         Properties properties = new Properties();
         properties.load(this.getClass().getClassLoader().getResourceAsStream("environment.properties"));
-        String url = properties.getProperty("ch.heigvd.authentication.server.url");
+        String url = properties.getProperty("ch.heigvd.movies.server.url");
         api.getApiClient().setBasePath(url);
 
     }

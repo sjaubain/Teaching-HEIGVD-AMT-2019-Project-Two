@@ -5,9 +5,7 @@ import ch.heigvd.authentication.api.DefaultApi;
 import java.io.IOException;
 import java.util.Properties;
 
-/**
- * Created by Olivier Liechti on 24/06/17.
- */
+
 public class Environment {
 
     private DefaultApi api = new DefaultApi();

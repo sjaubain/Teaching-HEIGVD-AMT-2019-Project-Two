@@ -5,7 +5,6 @@ import ch.heigvd.authentication.ApiResponse;
 import ch.heigvd.authentication.api.DefaultApi;
 import ch.heigvd.authentication.api.dto.UserCredentials;
 import ch.heigvd.authentication.api.spec.helpers.Environment;
-import com.google.inject.Singleton;
 
 
 /**
@@ -14,7 +13,6 @@ import com.google.inject.Singleton;
  * API response... It is shared between all
  * other steps classes (with picocontainer)
  */
-@Singleton
 public class Context {
 
     Environment environment;

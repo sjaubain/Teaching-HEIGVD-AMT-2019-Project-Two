@@ -159,8 +159,10 @@ public class MoviesService implements IMoviesService {
     }
 
     @Override
-    public void addRating(String userId, int movieId, int rating, String description) {
-        ratingsRepository.save(new RatingEntity(userId, movieId, rating, description));
+    public Rating addRating(String userId, int movieId, int rating, String description) {
+        RatingEntity newRating = new RatingEntity(userId, movieId, rating, description);
+        ratingsRepository.save(newRating);
+        return toRating(newRating);
     }
 
     @Override
@@ -201,9 +203,11 @@ public class MoviesService implements IMoviesService {
     @Override
     public RatingEntity toRatingEntity(Rating rating) {
         RatingEntity ratingEntity = new RatingEntity();
+        ratingEntity.setRatingId(rating.getRatingId());
         ratingEntity.setDescription(rating.getDescription());
         ratingEntity.setRating(rating.getRating());
         ratingEntity.setMovieId(rating.getRatingId());
+        ratingEntity.setUserId(rating.getUserId());
         return ratingEntity;
     }
 
@@ -213,6 +217,8 @@ public class MoviesService implements IMoviesService {
         rating.setDescription(ratingEntity.getDescription());
         rating.setRating(ratingEntity.getRating());
         rating.setRatingId(ratingEntity.getRatingId());
+        rating.setMovieId(String.valueOf(ratingEntity.getMovieId()));
+        rating.setUserId(ratingEntity.getUserId());
         return rating;
     }
 

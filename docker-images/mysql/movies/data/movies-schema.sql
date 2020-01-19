@@ -31,8 +31,6 @@ CREATE TABLE amt_rating (
 	FOREIGN KEY (movie_id) REFERENCES amt_movie(movie_id)
 );
 
-ALTER TABLE amt_rating ALTER COLUMN rating_id SET DEFAULT 0
-
 LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/movies.csv' 
 INTO TABLE amt_movie
 FIELDS TERMINATED BY ',' 

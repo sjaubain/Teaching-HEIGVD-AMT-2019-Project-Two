@@ -14,16 +14,16 @@ import java.util.List;
 @Repository
 public interface RatingsRepository extends CrudRepository<RatingEntity, Integer> {
 
-    @Query("SELECT r FROM RatingEntity r WHERE r.movieId = movieId")
-    List<RatingEntity> getRatingsByMovieId(int movieId);
+    @Query("SELECT r FROM RatingEntity r WHERE r.movieId = :movieId")
+    List<RatingEntity> getRatingsByMovieId(@Param("movieId") int movieId);
 
-    @Query("SELECT r FROM RatingEntity r WHERE r.userId = userId")
-    List<RatingEntity> getRatingsByUserId(String userId);
+    @Query("SELECT r FROM RatingEntity r WHERE r.userId = :userId")
+    List<RatingEntity> getRatingsByUserId(@Param("userId") String userId);
 
     @Transactional
     @Modifying
     @Query("UPDATE RatingEntity r SET r.rating = :newRating, r.description = :newDescription WHERE r.ratingId = :ratingId")
-    int updateRating(@Param("ratingId") int ratingId,
+    void updateRating(@Param("ratingId") int ratingId,
                      @Param("newRating") int newRating,
                      @Param("newDescription") String newDescription);
 }

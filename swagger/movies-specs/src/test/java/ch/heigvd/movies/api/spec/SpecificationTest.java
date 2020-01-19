@@ -1,8 +1,7 @@
-package ch.heigvd.authentication.api.spec;
+package ch.heigvd.movies.api.spec;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 
 /**

@@ -1,14 +1,13 @@
 package ch.heigvd.authentication.api.spec.steps;
 
 import ch.heigvd.authentication.api.dto.UserCredentials;
-import ch.heigvd.authentication.api.spec.helpers.Environment;
 import io.cucumber.java.en.Given;
 
 public class PayloadSteps {
 
     Context context;
 
-    public PayloadSteps(Environment environment, Context context) {
+    public PayloadSteps(Context context) {
         this.context = context;
     }
 

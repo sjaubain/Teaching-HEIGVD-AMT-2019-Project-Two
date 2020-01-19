@@ -4,6 +4,7 @@ import ch.heigvd.movies.api.MoviesApi;
 import ch.heigvd.movies.api.dto.Movie;
 import ch.heigvd.movies.api.dto.Rating;
 import ch.heigvd.movies.api.dto.User;
+import ch.heigvd.movies.entities.UserEntity;
 import ch.heigvd.movies.services.MoviesService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,7 +52,11 @@ public class MoviesController implements MoviesApi {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
 
-        return new ResponseEntity<>(moviesService.getRatingsByMovie(movieId), HttpStatus.OK);
+        List<Rating> ratings = moviesService.getRatingsByMovie(movieId);
+        if(ratings != null)
+            return new ResponseEntity<>(moviesService.getRatingsByMovie(movieId), HttpStatus.OK);
+        else
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
     @Override
@@ -67,7 +72,7 @@ public class MoviesController implements MoviesApi {
     }
 
     @Override
-    public ResponseEntity<Object> addRating(String authorization, String movieId, Rating rating) {
+    public ResponseEntity<Rating> addRating(String authorization, String movieId, Rating rating) {
 
         User askingUser = moviesService.decodeJWT(authorization);
 
@@ -78,10 +83,8 @@ public class MoviesController implements MoviesApi {
         // Get user id (email)
         String userId = askingUser.getEmail();
 
-        moviesService.addRating(userId, Integer.valueOf(movieId),
-                Integer.valueOf(rating.getRating()), rating.getDescription());
-
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+        return new ResponseEntity<>(moviesService.addRating(userId, Integer.valueOf(movieId),
+                Integer.valueOf(rating.getRating()), rating.getDescription()), HttpStatus.CREATED);
     }
 
     @Override
@@ -103,7 +106,7 @@ public class MoviesController implements MoviesApi {
     }
 
     @Override
-    public ResponseEntity<Object> updateRating(String authorization, Rating rating, String ratingId) {
+    public ResponseEntity<Object> updateRating(String authorization, String ratingId, Rating rating) {
 
         User askingUser = moviesService.decodeJWT(authorization);
 
@@ -133,6 +136,9 @@ public class MoviesController implements MoviesApi {
     }
 
     public boolean userOwnsRating(String userId, String ratingId) {
-        return moviesService.getUserEmailByRating(ratingId).equals(userId);
+        // return false if the rating doesn't exist or if the user
+        // doesn't own the rating
+        String email = moviesService.getUserEmailByRating(ratingId);
+        return (email != null && email.equals(userId));
     }
 }

@@ -1,51 +1,43 @@
 swagger: '2.0'
 info:
   version: '0.1.0'
-  title: my simple api
-  description: An API to manage users accounts
-host: localhost:8080
-basePath: /api
+  title: my simple api v.2
+  description: An API to rate movies
+host: localhost:9191
+basePath: /movies-api
 schemes:
   - http
-  - https
 paths:
-  /users:
+  /movies:
     get:
-      description: get the list of all users
-      operationId: getUsers
+      description: get the list of all movies
+      operationId: getMovies
       produces:
         - application/json
+      parameters:
+        - name: keyword
+          in: query
+          required: false
+          type: string
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+        - name: page
+          in: query
+          required: true
+          type: string
       responses:
         '200':
           description: success
           schema:
             type: array
             items:
-              $ref: '#/definitions/User'
-    post:
-      description: create a user
-      operationId: createUser
-      consumes:
-        - application/json
-      parameters:
-        - name: Authorization
-          in: header
-          required: true
-          type: string
-        - name: user
-          in: body
-          required: true
-          schema:
-            $ref: '#/definitions/User'
-      responses:
-        '201':
-          description: created
-          schema:
-            type: object
-  /users/{email}:
+              $ref: '#/definitions/Movie'
+  /movies/{movieId}:
     get:
-      description: get user by email
-      operationId: getUserByEmail
+      description: get all ratings for a specific movie
+      operationId: getRatingsByMovie
       produces:
         - application/json
       parameters:
@@ -53,7 +45,7 @@ paths:
           in: header
           required: true
           type: string
-        - name: email
+        - name: movieId
           in: path
           required: true
           type: string
@@ -61,58 +53,140 @@ paths:
         '200':
           description: success
           schema:
-              $ref: '#/definitions/User'
-  /authenticate:
+            type: array
+            items:
+              $ref: '#/definitions/Rating'
     post:
-      description: authenticate a user
-      operationId: authenticate
+      description: rate a movie
+      operationId: addRating
       consumes:
         - application/json
       parameters:
-        - name: userCredentials
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+        - name: movieId
+          in: path
+          required: true
+          type: string
+        - name: rating
           in: body
           required: true
           schema:
-            $ref: '#/definitions/UserCredentials'
+              $ref: '#/definitions/Rating'
+      responses:
+        '201':
+          description: created
+          schema:
+            $ref: '#/definitions/Rating'
+  /movies/{movieId}/avg:
+    get:
+      description: get the average rating for a specific movie
+      operationId: getAvgRatingByMovie
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+        - name: movieId
+          in: path
+          required: true
+          type: string
       responses:
         '200':
           description: success
           schema:
-            type: string
+            type: object
+  /movies/my-ratings:
+    get:
+      description: get personal ratings
+      operationId: getPersonalRatings
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+      responses:
+        '200':
+          description: success
+          schema:
+            type: array
             items:
-              $ref: '#/definitions/JWT'
-        '400':
-          description: bad request
-        '401':
-          description: unauthorized
+              $ref: '#/definitions/Rating'
+    put:
+      description: update a rating
+      operationId: updateRating
+      consumes:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+        - name: ratingId
+          in: query
+          required: true
+          type: string
+        - name: rating
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Rating'
+      responses:
+        '200':
+          description: updated
+          schema:
+            type: object
+    delete:
+      description: delete a rating
+      operationId: removeRating
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+        - name: ratingId
+          in: query
+          required: true
+          type: string
+      responses:
+        '200':
+          description: removed
+          schema:
+            type: object
 definitions:
+  Movie:
+    type: object
+    properties:
+      movie_id:
+        type: integer
+      title:
+        type: string
+      description:
+        type: string
+      director:
+        type: string
   User:
     type: object
     properties:
-      firstname:
-        type: string
-      lastname:
-        type: string
-      username:
-        type: string
       email:
         type: string
-      password:
-        type: string
-        required: true
-      isAdmin:
-        type: boolean
-      isLocked:
-        type: boolean
-  UserCredentials:
+  Rating:
     type: object
     properties:
-      email:
+      ratingId:
+        type: integer
+      userId:
         type: string
-      password:
+      movieId:
         type: string
-  JWT:
-    type: object
-    properties:
-      jwt:
+      rating:
+        type: integer
+      description:
         type: string
+
