@@ -2,35 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad5c2c77-9e48-4349-8f1f-4ca90b6f481a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/../movies-specs/src/test/java/ch/heigvd/movies/api/spec/steps/NavigateSteps.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../movies-specs/src/test/java/ch/heigvd/movies/api/spec/steps/PayloadSteps.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../movies-specs/src/test/java/ch/heigvd/movies/api/spec/steps/ResponseSteps.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../movies-specs/src/test/resources/scenarios/delete.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../movies-specs/src/test/resources/scenarios/read.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../movies-specs/src/test/resources/scenarios/update.feature" />
-      <change beforePath="$PROJECT_DIR$/../../docker-images/mysql/movies/data/movies-schema.sql" afterPath="$PROJECT_DIR$/../../docker-images/mysql/movies/data/movies-schema.sql" />
+      <change beforePath="$PROJECT_DIR$/../../docker-images/spring-boot/authentication/swagger-spring-1.0.0.jar" afterPath="$PROJECT_DIR$/../../docker-images/spring-boot/authentication/swagger-spring-1.0.0.jar" />
+      <change beforePath="$PROJECT_DIR$/../../docker-images/spring-boot/movies/swagger-spring-1.0.0.jar" afterPath="$PROJECT_DIR$/../../docker-images/spring-boot/movies/swagger-spring-1.0.0.jar" />
+      <change beforePath="$PROJECT_DIR$/../../launcher.sh" afterPath="$PROJECT_DIR$/../../launcher.sh" />
+      <change beforePath="$PROJECT_DIR$/../auth-server/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../auth-server/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../auth-server/src/main/java/ch/heigvd/authentication/api/endpoints/UserController.java" afterPath="$PROJECT_DIR$/../auth-server/src/main/java/ch/heigvd/authentication/api/endpoints/UserController.java" />
       <change beforePath="$PROJECT_DIR$/../auth-specs/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../auth-specs/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/authentication/api/spec/helpers/Environment.java" afterPath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/authentication/api/spec/helpers/Environment.java" />
-      <change beforePath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/authentication/api/spec/steps/Context.java" afterPath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/authentication/api/spec/steps/Context.java" />
-      <change beforePath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/authentication/api/spec/steps/PayloadSteps.java" afterPath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/authentication/api/spec/steps/PayloadSteps.java" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/pom.xml" afterPath="$PROJECT_DIR$/../auth-specs/pom.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/heigvd/movies/api/endpoints/MoviesController.java" afterPath="$PROJECT_DIR$/src/main/java/ch/heigvd/movies/api/endpoints/MoviesController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/heigvd/movies/entities/RatingEntity.java" afterPath="$PROJECT_DIR$/src/main/java/ch/heigvd/movies/entities/RatingEntity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/heigvd/movies/repositories/RatingsRepository.java" afterPath="$PROJECT_DIR$/src/main/java/ch/heigvd/movies/repositories/RatingsRepository.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/heigvd/movies/services/IMoviesService.java" afterPath="$PROJECT_DIR$/src/main/java/ch/heigvd/movies/services/IMoviesService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/heigvd/movies/services/MoviesService.java" afterPath="$PROJECT_DIR$/src/main/java/ch/heigvd/movies/services/MoviesService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/api-spec.yaml" afterPath="$PROJECT_DIR$/src/main/resources/api-spec.yaml" />
       <change beforePath="$PROJECT_DIR$/../movies-specs/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../movies-specs/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../movies-specs/executableSpecification.iml" afterPath="$PROJECT_DIR$/../movies-specs/executableSpecification.iml" />
       <change beforePath="$PROJECT_DIR$/../movies-specs/pom.xml" afterPath="$PROJECT_DIR$/../movies-specs/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/../movies-specs/src/main/resources/api-spec.yaml" afterPath="$PROJECT_DIR$/../movies-specs/src/main/resources/api-spec.yaml" />
-      <change beforePath="$PROJECT_DIR$/../movies-specs/src/test/java/ch/heigvd/authentication/api/spec/SpecificationTest.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../movies-specs/src/test/java/ch/heigvd/authentication/api/spec/helpers/Environment.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../movies-specs/src/test/java/ch/heigvd/authentication/api/spec/steps/AuthenticationSteps.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../movies-specs/src/test/java/ch/heigvd/authentication/api/spec/steps/CreationSteps.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../movies-specs/src/test/resources/environment.properties" afterPath="$PROJECT_DIR$/../movies-specs/src/test/resources/environment.properties" />
-      <change beforePath="$PROJECT_DIR$/../movies-specs/src/test/resources/scenarios/authentication.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../movies-specs/src/test/resources/scenarios/creation.feature" afterPath="$PROJECT_DIR$/../movies-specs/src/test/resources/scenarios/creation.feature" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,7 +29,7 @@
       <file leaf-file-name="api-spec.yaml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/api-spec.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="1848">
               <caret line="88" column="11" lean-forward="false" selection-start-line="88" selection-start-column="11" selection-end-line="88" selection-end-column="11" />
               <folding />
             </state>
@@ -58,7 +39,7 @@
       <file leaf-file-name="MoviesController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/movies/api/endpoints/MoviesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
+            <state relative-caret-position="1974">
               <caret line="110" column="65" lean-forward="false" selection-start-line="110" selection-start-column="65" selection-end-line="110" selection-end-column="65" />
               <folding />
             </state>
@@ -78,14 +59,14 @@
       <file leaf-file-name="MoviesApi.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/target/generated-sources/swagger/src/gen/java/main/ch/heigvd/movies/api/MoviesApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
+            <state relative-caret-position="2583">
               <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MoviesService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MoviesService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/movies/services/MoviesService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="163">
@@ -99,20 +80,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/movies/entities/UserEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="12" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="RatingsRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/movies/repositories/RatingsRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
+            <state relative-caret-position="525">
               <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -121,17 +92,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RatingEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/movies/entities/RatingEntity.java">
+      <file leaf-file-name="MoviesRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/movies/repositories/MoviesRepository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="147">
-              <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsersRepository.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UsersRepository.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/movies/repositories/UsersRepository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
@@ -141,10 +112,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="RatingEntity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/movies/entities/RatingEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="IMoviesService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/movies/services/IMoviesService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
+            <state relative-caret-position="420">
               <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -280,9 +261,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -487,6 +467,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -504,7 +485,7 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="RequestMappingsPanelOrder2" value="2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../movies-specs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
   </component>
@@ -664,12 +645,13 @@
       <workItem from="1579253679501" duration="588000" />
       <workItem from="1579289947941" duration="6306000" />
       <workItem from="1579298872806" duration="643000" />
-      <workItem from="1579375656653" duration="22106000" />
+      <workItem from="1579375656653" duration="22382000" />
+      <workItem from="1579464291528" duration="47000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154062000" />
+    <option name="totallyTimeSpent" value="154385000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -695,13 +677,12 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43443558" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43443558" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27497315" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -714,6 +695,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -816,13 +798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="693">
           <caret line="36" column="50" lean-forward="true" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/movies/repositories/MoviesRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -947,7 +922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -973,7 +947,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -981,7 +954,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1015,14 +987,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/movies/repositories/UsersRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/movies/entities/UserEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -1033,25 +997,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/movies/entities/RatingEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
+        <state relative-caret-position="462">
           <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/movies/repositories/RatingsRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/movies/services/IMoviesService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
+        <state relative-caret-position="420">
           <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1069,7 +1023,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/api-spec.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
+        <state relative-caret-position="1848">
           <caret line="88" column="11" lean-forward="false" selection-start-line="88" selection-start-column="11" selection-end-line="88" selection-end-column="11" />
           <folding />
         </state>
@@ -1077,7 +1031,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/target/generated-sources/swagger/src/gen/java/main/ch/heigvd/movies/api/MoviesApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
+        <state relative-caret-position="2583">
           <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
           <folding />
         </state>
@@ -1085,7 +1039,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/movies/api/endpoints/MoviesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
+        <state relative-caret-position="1974">
           <caret line="110" column="65" lean-forward="false" selection-start-line="110" selection-start-column="65" selection-end-line="110" selection-end-column="65" />
           <folding />
         </state>
@@ -1100,6 +1054,32 @@
             <element signature="e#5365#5366#0" expanded="true" />
             <element signature="e#5389#5390#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/movies/repositories/RatingsRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/movies/repositories/MoviesRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/movies/repositories/UsersRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -2,35 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ca48752-6f99-4a28-9943-cc98e0ba6832" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/../movies-specs/src/test/java/ch/heigvd/movies/api/spec/steps/NavigateSteps.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../movies-specs/src/test/java/ch/heigvd/movies/api/spec/steps/PayloadSteps.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../movies-specs/src/test/java/ch/heigvd/movies/api/spec/steps/ResponseSteps.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../movies-specs/src/test/resources/scenarios/delete.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../movies-specs/src/test/resources/scenarios/read.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../movies-specs/src/test/resources/scenarios/update.feature" />
-      <change beforePath="$PROJECT_DIR$/../../docker-images/mysql/movies/data/movies-schema.sql" afterPath="$PROJECT_DIR$/../../docker-images/mysql/movies/data/movies-schema.sql" />
+      <change beforePath="$PROJECT_DIR$/../../docker-images/spring-boot/authentication/swagger-spring-1.0.0.jar" afterPath="$PROJECT_DIR$/../../docker-images/spring-boot/authentication/swagger-spring-1.0.0.jar" />
+      <change beforePath="$PROJECT_DIR$/../../docker-images/spring-boot/movies/swagger-spring-1.0.0.jar" afterPath="$PROJECT_DIR$/../../docker-images/spring-boot/movies/swagger-spring-1.0.0.jar" />
+      <change beforePath="$PROJECT_DIR$/../../launcher.sh" afterPath="$PROJECT_DIR$/../../launcher.sh" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/helpers/Environment.java" afterPath="$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/helpers/Environment.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/steps/Context.java" afterPath="$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/steps/Context.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/steps/PayloadSteps.java" afterPath="$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/steps/PayloadSteps.java" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change beforePath="$PROJECT_DIR$/../movies-server/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../movies-server/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../movies-server/src/main/java/ch/heigvd/movies/api/endpoints/MoviesController.java" afterPath="$PROJECT_DIR$/../movies-server/src/main/java/ch/heigvd/movies/api/endpoints/MoviesController.java" />
-      <change beforePath="$PROJECT_DIR$/../movies-server/src/main/java/ch/heigvd/movies/entities/RatingEntity.java" afterPath="$PROJECT_DIR$/../movies-server/src/main/java/ch/heigvd/movies/entities/RatingEntity.java" />
-      <change beforePath="$PROJECT_DIR$/../movies-server/src/main/java/ch/heigvd/movies/repositories/RatingsRepository.java" afterPath="$PROJECT_DIR$/../movies-server/src/main/java/ch/heigvd/movies/repositories/RatingsRepository.java" />
-      <change beforePath="$PROJECT_DIR$/../movies-server/src/main/java/ch/heigvd/movies/services/IMoviesService.java" afterPath="$PROJECT_DIR$/../movies-server/src/main/java/ch/heigvd/movies/services/IMoviesService.java" />
-      <change beforePath="$PROJECT_DIR$/../movies-server/src/main/java/ch/heigvd/movies/services/MoviesService.java" afterPath="$PROJECT_DIR$/../movies-server/src/main/java/ch/heigvd/movies/services/MoviesService.java" />
-      <change beforePath="$PROJECT_DIR$/../movies-server/src/main/resources/api-spec.yaml" afterPath="$PROJECT_DIR$/../movies-server/src/main/resources/api-spec.yaml" />
       <change beforePath="$PROJECT_DIR$/../movies-specs/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../movies-specs/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../movies-specs/executableSpecification.iml" afterPath="$PROJECT_DIR$/../movies-specs/executableSpecification.iml" />
       <change beforePath="$PROJECT_DIR$/../movies-specs/pom.xml" afterPath="$PROJECT_DIR$/../movies-specs/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/../movies-specs/src/main/resources/api-spec.yaml" afterPath="$PROJECT_DIR$/../movies-specs/src/main/resources/api-spec.yaml" />
-      <change beforePath="$PROJECT_DIR$/../movies-specs/src/test/java/ch/heigvd/authentication/api/spec/SpecificationTest.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../movies-specs/src/test/java/ch/heigvd/authentication/api/spec/helpers/Environment.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../movies-specs/src/test/java/ch/heigvd/authentication/api/spec/steps/AuthenticationSteps.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../movies-specs/src/test/java/ch/heigvd/authentication/api/spec/steps/CreationSteps.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../movies-specs/src/test/resources/environment.properties" afterPath="$PROJECT_DIR$/../movies-specs/src/test/resources/environment.properties" />
-      <change beforePath="$PROJECT_DIR$/../movies-specs/src/test/resources/scenarios/authentication.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../movies-specs/src/test/resources/scenarios/creation.feature" afterPath="$PROJECT_DIR$/../movies-specs/src/test/resources/scenarios/creation.feature" />
     </list>
     <ignored path="ExecutableSpecification.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -106,11 +85,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PayloadSteps.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PayloadSteps.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/steps/PayloadSteps.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
               <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -138,16 +127,6 @@
                 <element signature="e#501#502#0" expanded="true" />
                 <element signature="e#543#544#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefaultApi.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/generated-sources/openapitools/ch/heigvd/authentication/api/DefaultApi.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6090">
-              <caret line="329" column="10" lean-forward="false" selection-start-line="329" selection-start-column="10" selection-end-line="329" selection-end-column="10" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -206,7 +185,6 @@
         <option value="$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/SpecificationTest.java" />
         <option value="$PROJECT_DIR$/target/generated-sources/swagger/src/test/java/ch/heigvd/authentication/api/DefaultApiTest.java" />
         <option value="$PROJECT_DIR$/src/test/resources/environment.properties" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/steps/RequestSteps.java" />
         <option value="$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/steps/AuthenticationSteps.java" />
         <option value="$PROJECT_DIR$/src/test/resources/scenarios/authentication.feature" />
@@ -219,6 +197,7 @@
         <option value="$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/steps/Context.java" />
         <option value="$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/steps/PayloadSteps.java" />
         <option value="$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/helpers/Environment.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -988,12 +967,12 @@
       <workItem from="1579254479782" duration="6249000" />
       <workItem from="1579272183338" duration="13833000" />
       <workItem from="1579375735478" duration="1338000" />
-      <workItem from="1579435444464" duration="6203000" />
+      <workItem from="1579435444464" duration="6825000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58832000" />
+    <option name="totallyTimeSpent" value="59454000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1313,14 +1292,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2247">
-          <caret line="107" column="20" lean-forward="false" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/target/generated-sources/openapitools/ch/heigvd/authentication/ApiClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
@@ -1341,14 +1312,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6090">
           <caret line="329" column="10" lean-forward="false" selection-start-line="329" selection-start-column="10" selection-end-line="329" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/environment.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1423,6 +1386,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/environment.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
           <folding />
         </state>
       </provider>

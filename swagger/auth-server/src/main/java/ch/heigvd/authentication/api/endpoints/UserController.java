@@ -83,6 +83,7 @@ public class UserController implements UsersApi {
     @Override
     public ResponseEntity<List<User>> getUsers() {
 
+        // TODO: only let admin see users information
         List<User> ret = userService.getAllUsers();
 
         return new ResponseEntity<>(ret, HttpStatus.ACCEPTED);

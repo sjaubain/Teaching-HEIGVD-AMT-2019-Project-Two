@@ -1,105 +1,45 @@
-# Teaching-HEIGVD-AMT-2019-Project-Two
-## Objectives
+#AMT - Project Two
 
-The objectives of this project is to design, specify, implement and validate **2 RESTful APIs** (you can think of them as 2 "micro-services"), using a set of technologies that build upon or complement Java EE standards. Namely, the goal is to use:
+Le projet se compose de deux APIs Rest, l'une de gestion d'utilisateurs, l'autre permettant de consulter des films et de leur attribuer une note et une description. Chacune des APIs dispose de sa propre base de donnée et une topologie docker permet d'automatiser le lancement des backends, de leurs bases de données ainsi que d'un container *traefik*, agissant comme reverse-proxy pour les deux backends. Des procédures de tests automatisés permettent en outre de valider le bon fonctionnement des APIs.
 
-* **Spring Boot**, **Spring Data**, **Spring MVC** and **Spring Data** for the implementation of the endpoints and of the persistence;
-* **Swagger** (**Open API**) to create a formal documentation of the REST APIs (this formal documentation has to be used in the development cycle);
-* JSON Web Tokens (**JWT**) to secure the RESTful endpoints;
-* **CucumberJVM** to implement BDD tests.
+## Authentication API
 
-## Functional requirements
+La première API Rest consiste en la gestion et l'authentification d'utilisateurs, de manière générale. Une route permet de s'authentifier afin d'obtenir un token JWT, qui servira à être reconnu lors de toutes les requêtes futures sur les deux APIs (celui-ci devra être introduit dans l'en-tête de chaque requête). D'autres routes servent à visualiser les données des utilisateurs.
 
-* Design, specify and implement **a first API** that is used to **manage** user accounts. 
-  * Every account has at least an e-mail (used as the primary ID), a first name, a last name and a password. 
-  * The API must also allow the user to change its password. 
-  * A user cannot change the password of someone else.
-  * The API also exposes an endpoint to authenticate a user: it returns a JWT token if the provided credentials are correct.
-  * Specify, implement and validate at least one of these features:
-    * Only a user with an ADMIN role can create accounts.
-    * A user with an ADMIN role can block/unblock a user account; when blocked, the user cannot login. Be mindful of JWT tokens.
-    * A user needs to prove that he owns the e-mail address (by receiving an e-mail with a code).
-    * A user can ask to reset his password, which is done via e-mail (typical reset password).
-* Like in the first project, **expose at least 3 entities through a second REST API** (one of them capturing the relationship between the two others; for instance, *Membership* would capture the relationship between *Person* and *Group*). You can use the same entities that you used in the first project, but do not have to.
-  * The REST API must support CRUD operations on the 2 main entities; you have to specify what is the intended behavior when you delete an entity.
-  * The REST API must provide a way to associate/de-associate a pair of two main entities.
-  * it is up to you to define the structure of your payloads (DTOs), but you have to justify your choices in the report (and to explain what are the tradeoffs)
-* The REST APIs must implement **pagination**. It is up to you to decide how the client and server negotiate the parameters, but you have to explain it in your documentation.
+Une fois authentifié, un utilisateur a la possibilité s'il est administrateur de créer un nouveau compte, ou de visualiser les données personnelles de n'importe quel autre utilisateur. Lors de la création d'un utilisateur, celui-ci est entré dans la base de donnée, avec son mot de passe haché. La liste complète des routes est disponible [ici](doc/apis)
 
-## Constraints
+## Movies API
 
-- You HAVE TO use Spring Boot, Spring MVC and Spring Data.
-- You MUST NOT use Spring Data REST (MUST NOT = you are not allowed).
-- You MUST specify both APIs with Swagger / Open API.
-- You MUST implement two Spring Boot projects, each producing a different .jar file.
-- You must deliver a Docker Compose topology, with (at least):
-  - A container with the first back-end
-  - A container with the second back-end
-  - A container with the RDBMS; every back-end should have its own database (no shared tables)
-  - A container with Traefik, acting as a dynamic reverse proxy
+La seconde API permet à un utilisateur authentifié de consulter une liste (paginée) de films contenus dans la base de donnée (chargés au lancement à partir d'un fichier .csv) en entrant éventuellement un mot clé comme query-string, de voir tous les votes relatifs à un film donné, de voir la liste complète de ses propres votes, d'en ajouter, d'en supprimer ou d'en mettre à jour de nouveaux. La table qui identifie les utilisateurs ne contient que leur id (email) et ils y sont ajoutés la première fois qu'ils utilisent l'API.
 
-## Non-functional requirements
+Lorsqu'un utilisateur ajoute un vote (note et description), une relation est établie entre lui et le film, comme l'illustre le schéma suivant :
 
-* **Automation**
-  * It MUST be possible to build, run and test your project with minimal effort (you know how to use Docker Compose and how to write scripts)
-* **Testing**
-  * **BDD**. Implement comprehensive testing with CucumberJVM.
-  * **Performance and load testing**. Implement JMeter tests for several use cases.
-* **Documentation**
-  * Document the decisions you made during the design of the API.
-  * Document your implementation of the back-end APIs (how did you use the framework capabilities, what did you have to do to fix issues or implement special features).
-  * Document what you have one to test and validate your project.
-  * Document and comment your performance results (we want numbers, screenshots and an interpretation).
+![](imgs/db_movies.png)
 
-## Organization
+La liste exhaustive des différentes routes est résumée [ici](doc/apis).
 
-**You will work in teams of 2 students**. For effective learning, it is important that each person works on every aspect (do not split code vs testing, because you will miss learning opportunities).
+## Lancement
 
-**Deadline for submission: Sunday, January 19th, 23h.**
+Pour lancer la topologie docker, il suffit d'exécuter le script *launcher.sh* à la racine du projet. Celui-ci va effectuer les étapes suivantes :
 
-**Deliverables:**
+* clean-and-build les deux projets spring boot afin de générer les .jar
+* copier les .jar à l'endroit où se trouvent les images docker spring boot
+* lancer le `docker-compose up --build` pour générer les six containers (2 backends spring, 2 containers mysql, phpmyadmin et traefik)
 
-* Clean git repo, with clear instructions on the main README.md for how to build, run and test your application.
-* Report as a set of markdown files in a doc folder.
-* Links to the various markdown files from the main README.md files.
-* What do we want to read in your report?
-  * **What** you have implemented (functional aspects). Tell us briefly about the business domain you have selected and describe your business model. A diagram showing the entities and their relationships will help. A couple of screenshots too.
-  * **How** you have implemented it. Tell us briefly about the components you had to use across the tiers and if you encountered issues or made choices that you find interesting.
-  * You **testing strategy**: we want to see that you understand the role and value of the different types of automated tests. We want to see that you can explain what tools can be used t implement these types of tests. We want to have your opinion on the effectiveness of your test strategy (what do you like and what do you not like about your test suite?)
-  * In particular a detailed report about your **experiment** to answer the performance tests. We want a clear description of the experiment. We want numbers, graphs and explanations of what they mean.
-  * A list of **known bugs and limitations**.
+Pour plus de détails concernant les bases de données mysql et leur images docker, cliquer [ici](doc/databases).
 
-## Proposed timeline
+## Utilisation
 
-You don't have to follow this sequence if you prefer to do some of the tasks before. However, if you don't know how to start, this is probably a **decomposition** that will help you.
+La procédure de lancement prends un certain temps. Une fois terminée, les APIs sont accessibles par le biais du reverse proxy traefik à l'URL **http://<IP_machine_docker>/<context_root>**. Remplacer **<context_root>** par **/movies-api/** ou **/users-api** pour que traefik redirige les requêtes vers les bons backends.
 
-**Week 1 (December 2nd):**
+Une fois à la racine de l'une ou l'autre API, la page d'accueil swagger s'ouvre, avec le résumé des routes disponibles, ainsi que les paramètres à entrer dans les requêtes pour chacune d'entre elles.
 
-* Get familiar with the 2 reference projects; be able to build and run them on your machine; be able to run the CucumberJVM tests.
-* Do a first draft of the 2 REST APIs; have them reviewed if you are creating an API for the first time or are not sure about some design choices.
-* Get familiar with the Open API syntax; use the Swagger Editor or one of the IDE plugins to write your spec.
-* Create a git repo for your project. You should have 4 modules: 2 backend and 2 BDD projects. Use the reference projects as a template. Prepare the Docker Compose topology and images. Prepare scripts to build the code and the Docker the images.
+Pour tester le fonctionnement des APIs, il est possible par exemple d'entrer les credentials d'un utilisateur authentifié (*simon.jobin@bluewin.ch* et mot de passe *password* sur **/users-api/authentication**, récupérer le JWT obtenu et l'utiliser sur l'ensemble des autres routes.
 
-**Week 2 (December 9th):**
+Il est également possible d'observer l'état des bases de données via **http://<IP_machine_docker>:6060**, qui nous redirige sur le container phpmyadmin, accessible avec les credentials *admin - admin* et nous permet de choisir le serveur mysql voulu.
 
-* Implement a **first endpoint** (one of the 2 main entities) end-to-end. You should be able to perform CRUD operations on the endpoint and validate that it works with Cucumber. One person can focus on the backend, the other on the Cucumber tests.
-* Be mindful that **created resources have an owner**, and that only the owner should be able to access its resources (for RUD operations). Plan for that, even if you don't have your authentication service fully implemented.
+Pour terminer la topologie docker, simplement entrer la commande `docker-compose down` et éventuellement nettoyer les volumes utilisés lors de la création containers mysql avec `docker volume prune`.
 
-**Week 3 (December 16th):**
+## Tests effectués
 
-* Design, implement and validate the **user management** and **authentication** API.
-* Go back to the first endpoint implementation and **enforce security rules**.
-* Implement BDD scenarios to validate that authentication and authorization rules work as expected.
-
-**Week 4 (January 6th):**
-
-* Implement the **second endpoint**, swapping the role (the person working on Spring Boot now works on Cucumber and vice versa)
-* Implement the **third endpoint**, to manage associations between entities (end-to-end, with tests)
-* Add **Traefik** in the Docker topology
-
-**Week 5 (January 13th):**
-
-* Performance tests with JMeter
-* Final packaging and validation
-* Documentation
-
+Des tests automatisés côté client avec *cucumber* permettent de valider le fonctionnement des deux backends. Pour lancer les tests, il suffit de se placer à la racine du projet et de lancer le script *test.sh*. Pour plus de détails sur les tests couverts, cliquer [ici](doc/tests).
