@@ -20,7 +20,7 @@ CREATE TABLE amt_movie (
 );
 
 CREATE TABLE amt_rating (
-	rating_id INT NOT NULL,
+	rating_id INT AUTO_INCREMENT,
 	user_id VARCHAR(64),
 	movie_id INT,
 	rating INT,
@@ -30,6 +30,8 @@ CREATE TABLE amt_rating (
 	FOREIGN KEY (user_id) REFERENCES amt_user(email),
 	FOREIGN KEY (movie_id) REFERENCES amt_movie(movie_id)
 );
+
+ALTER TABLE amt_rating ALTER COLUMN rating_id SET DEFAULT 0
 
 LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/movies.csv' 
 INTO TABLE amt_movie

@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ca48752-6f99-4a28-9943-cc98e0ba6832" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../../docker-images/mysql/Dockerfile" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../docker-images/mysql/data/users-schema.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../docker-images/mysql/data/users.sql" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../docker-images/mysql/movies/data/movies-schema.sql" afterPath="$PROJECT_DIR$/../../docker-images/mysql/movies/data/movies-schema.sql" />
       <change beforePath="$PROJECT_DIR$/../auth-server/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../auth-server/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../auth-server/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/../auth-server/src/main/resources/application.properties" />
       <change beforePath="$PROJECT_DIR$/../auth-specs/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../auth-specs/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../../topology/docker-compose.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../movies-server/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../movies-server/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../movies-server/src/main/java/ch/heigvd/movies/api/endpoints/MoviesController.java" afterPath="$PROJECT_DIR$/../movies-server/src/main/java/ch/heigvd/movies/api/endpoints/MoviesController.java" />
+      <change beforePath="$PROJECT_DIR$/../movies-server/src/main/java/ch/heigvd/movies/entities/RatingEntity.java" afterPath="$PROJECT_DIR$/../movies-server/src/main/java/ch/heigvd/movies/entities/RatingEntity.java" />
+      <change beforePath="$PROJECT_DIR$/../movies-server/src/main/java/ch/heigvd/movies/repositories/RatingsRepository.java" afterPath="$PROJECT_DIR$/../movies-server/src/main/java/ch/heigvd/movies/repositories/RatingsRepository.java" />
+      <change beforePath="$PROJECT_DIR$/../movies-server/src/main/java/ch/heigvd/movies/services/IMoviesService.java" afterPath="$PROJECT_DIR$/../movies-server/src/main/java/ch/heigvd/movies/services/IMoviesService.java" />
+      <change beforePath="$PROJECT_DIR$/../movies-server/src/main/java/ch/heigvd/movies/services/MoviesService.java" afterPath="$PROJECT_DIR$/../movies-server/src/main/java/ch/heigvd/movies/services/MoviesService.java" />
+      <change beforePath="$PROJECT_DIR$/../movies-server/src/main/resources/api-spec.yaml" afterPath="$PROJECT_DIR$/../movies-server/src/main/resources/api-spec.yaml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="ExecutableSpecification.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,8 +61,8 @@
       <file leaf-file-name="AuthenticationSteps.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/steps/AuthenticationSteps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+            <state relative-caret-position="21">
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1068#1069#0" expanded="true" />
@@ -112,8 +119,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1869">
-              <caret line="89" column="42" lean-forward="false" selection-start-line="89" selection-start-column="42" selection-end-line="89" selection-end-column="42" />
+            <state relative-caret-position="273">
+              <caret line="19" column="44" lean-forward="false" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -170,13 +177,13 @@
         <option value="$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/SpecificationTest.java" />
         <option value="$PROJECT_DIR$/target/generated-sources/swagger/src/test/java/ch/heigvd/authentication/api/DefaultApiTest.java" />
         <option value="$PROJECT_DIR$/src/test/resources/environment.properties" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/resources/scenarios/creation.feature" />
         <option value="$PROJECT_DIR$/src/main/resources/api-spec.yaml" />
         <option value="$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/helpers/Environment.java" />
         <option value="$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/steps/CreationSteps.java" />
         <option value="$PROJECT_DIR$/src/test/resources/scenarios/authentication.feature" />
         <option value="$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/steps/AuthenticationSteps.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -224,48 +231,38 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="movies-specs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="movies-specs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth-specs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth-specs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="movies-specs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="movies-specs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="movies-specs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -273,16 +270,7 @@
             </path>
             <path>
               <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth-specs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="spec" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="movies-specs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -291,71 +279,15 @@
             </path>
             <path>
               <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="movies-specs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth-specs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="scenarios" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth-specs" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth-specs" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth-specs" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
-              <item name="openapitools" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth-specs" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
-              <item name="openapitools" type="462c0819:PsiDirectoryNode" />
-              <item name="authentication" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth-specs" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
-              <item name="openapitools" type="462c0819:PsiDirectoryNode" />
-              <item name="authentication" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ExecutableSpecification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="auth-specs" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
-              <item name="openapitools" type="462c0819:PsiDirectoryNode" />
-              <item name="authentication" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -371,6 +303,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3218391" />
     <property name="SearchEverywhereHistoryKey" value="avalia&#9;PSI&#9;JAVA://io.swagger.jackson.ModelResolver#applyBeanValidatorAnnotations" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -917,9 +850,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SpecificationTest" />
-        <item index="1" class="java.lang.String" itemvalue="Cucumber java.All Features in: test" />
-        <item index="2" class="java.lang.String" itemvalue="Cucumber java.All Features in: scenarios" />
+        <item index="0" class="java.lang.String" itemvalue="Cucumber java.All Features in: scenarios" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SpecificationTest" />
+        <item index="2" class="java.lang.String" itemvalue="Cucumber java.All Features in: test" />
         <item index="3" class="java.lang.String" itemvalue="Cucumber java.Feature: report-meaures" />
         <item index="4" class="java.lang.String" itemvalue="Maven.executableSpecification [test]" />
       </list>
@@ -955,11 +888,12 @@
       <workItem from="1577980517048" duration="841000" />
       <workItem from="1577981531232" duration="1966000" />
       <workItem from="1578056763494" duration="280000" />
+      <workItem from="1579424810281" duration="1286000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30507000" />
+    <option name="totallyTimeSpent" value="31793000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -993,9 +927,9 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44621938" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17673889" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44621938" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17673889" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31740063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1266,7 +1200,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
           <caret line="707" column="34" lean-forward="false" selection-start-line="707" selection-start-column="32" selection-end-line="707" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1300,14 +1233,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/target/generated-sources/swagger/src/test/java/ch/heigvd/authentication/api/DefaultApiTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/SpecificationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/target/generated-sources/openapitools/ch/heigvd/authentication/api/dto/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-967">
@@ -1338,26 +1263,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1869">
-          <caret line="89" column="42" lean-forward="false" selection-start-line="89" selection-start-column="42" selection-end-line="89" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/helpers/Environment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="17" column="69" lean-forward="false" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/environment.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1382,10 +1291,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/SpecificationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/environment.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="19" column="44" lean-forward="false" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ch/heigvd/authentication/api/spec/steps/AuthenticationSteps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        <state relative-caret-position="21">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1068#1069#0" expanded="true" />

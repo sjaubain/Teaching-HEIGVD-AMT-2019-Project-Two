@@ -31,6 +31,7 @@ public class MoviesService implements IMoviesService {
 
     //TODO: share it with the second API
     private static final String SECRET_KEY = "secret";
+    public static final int PAGE_SIZE = 10;
 
     @Autowired
     private MoviesRepository moviesRepository;
@@ -48,9 +49,9 @@ public class MoviesService implements IMoviesService {
      * @return the list of retrieved movies
      */
     @Override
-    public List<Movie> getAllMovies(String keyword) {
+    public List<Movie> getAllMovies(String keyword, String page) {
 
-        Pageable pageable = PageRequest.of(1, 100);
+        Pageable pageable = PageRequest.of(Integer.valueOf(page), PAGE_SIZE);
 
         List<Movie> ret = new LinkedList<>();
         Iterable<MovieEntity> allMovies = moviesRepository.findAll(pageable);
@@ -90,7 +91,12 @@ public class MoviesService implements IMoviesService {
             JWTVerifier verifier = JWT.require(algorithm).build();
             DecodedJWT tokenJWT = verifier.verify(jwt);
 
-            return new User().email(tokenJWT.getClaim("email").asString());
+            // Add the user in the DB if not already registered
+            User user = new User().email(tokenJWT.getClaim("email").asString());
+            if(!usersRepository.existsById(user.getEmail())) {
+                usersRepository.save(new UserEntity(user.getEmail()));
+            }
+            return user;
 
         } catch(Exception e) {
             return null;
@@ -102,6 +108,17 @@ public class MoviesService implements IMoviesService {
 
         try {
             return toUser(usersRepository.findById(email).get());
+        } catch(Exception e) {
+            return null;
+        }
+    }
+
+    @Override
+    public String getUserEmailByRating(String ratingId) {
+
+        try {
+            RatingEntity ratingEntity = ratingsRepository.findById(Integer.valueOf(ratingId)).get();
+            return ratingEntity.getUserId();
         } catch(Exception e) {
             return null;
         }
@@ -125,16 +142,40 @@ public class MoviesService implements IMoviesService {
     }
 
     @Override
-    public void addRating(String userId, int movieId, int rating, String description) {
+    public List<Rating> getRatingsByUserId(String userId) {
 
-        // when a user post a rating, he is automatically
-        // added in the db if not already saved
-        if(!usersRepository.findById(userId).isPresent()) {
-            usersRepository.save(new UserEntity(userId));
+        try {
+
+            List<Rating> ret = new LinkedList<>();
+            Iterable<RatingEntity> ratings = ratingsRepository.getRatingsByUserId(userId);
+            for(RatingEntity ratingEntity : ratings) {
+                ret.add(toRating(ratingEntity));
+            }
+            return ret;
+
+        } catch(Exception e) {
+            return null;
         }
+    }
 
+    @Override
+    public void addRating(String userId, int movieId, int rating, String description) {
         ratingsRepository.save(new RatingEntity(userId, movieId, rating, description));
+    }
 
+    @Override
+    public void updateRating(String ratingId, int newRating, String newDescription) {
+        ratingsRepository.updateRating(Integer.valueOf(ratingId), newRating, newDescription);
+    }
+
+    @Override
+    public void removeRating(String ratingId) {
+        ratingsRepository.delete(ratingsRepository.findById(Integer.valueOf(ratingId)).get());
+    }
+
+    @Override
+    public double getAvgRatingByMovie(String movieId) {
+        return 0;
     }
 
     @Override
@@ -161,10 +202,8 @@ public class MoviesService implements IMoviesService {
     public RatingEntity toRatingEntity(Rating rating) {
         RatingEntity ratingEntity = new RatingEntity();
         ratingEntity.setDescription(rating.getDescription());
-        ratingEntity.setUserId(rating.getUserId());
-        ratingEntity.setMovieId(rating.getMovieId());
         ratingEntity.setRating(rating.getRating());
-        ratingEntity.setRatingId(rating.getRatingId());
+        ratingEntity.setMovieId(rating.getRatingId());
         return ratingEntity;
     }
 
@@ -172,11 +211,9 @@ public class MoviesService implements IMoviesService {
     public Rating toRating(RatingEntity ratingEntity) {
         Rating rating = new Rating();
         rating.setDescription(ratingEntity.getDescription());
-        rating.setMovieId(ratingEntity.getMovieId());
         rating.setRating(ratingEntity.getRating());
-        rating.setUserId(ratingEntity.getUserId());
+        rating.setRatingId(ratingEntity.getRatingId());
         return rating;
-
     }
 
     /**

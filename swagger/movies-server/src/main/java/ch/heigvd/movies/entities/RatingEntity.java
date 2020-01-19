@@ -11,6 +11,9 @@ import javax.persistence.*;
 @Table(name = "amt_rating")
 public class RatingEntity {
 
+    // Mauvais choix, mais pas trouvé comment
+    // faire autrement pour l'auto-incément (bugs sql...)
+    private static int nbRatings = 0;
     public RatingEntity() {}
 
     public RatingEntity(String userId, int movieId, int rating, String description) {
@@ -18,10 +21,10 @@ public class RatingEntity {
         this.movieId = movieId;
         this.rating = rating;
         this.description = description;
+        this.ratingId = nbRatings++;
     }
 
     @Id
-    @GeneratedValue
     @Column(name = "rating_id")
     private Integer ratingId;
 

@@ -18,13 +18,15 @@ paths:
         - name: keyword
           in: query
           required: false
-          schema:
-            type: string
+          type: string
         - name: Authorization
           in: header
           required: true
-          schema:
-            $ref: '#/definitions/JWT'
+          type: string
+        - name: page
+          in: query
+          required: true
+          type: string
       responses:
         '200':
           description: success
@@ -32,7 +34,7 @@ paths:
             type: array
             items:
               $ref: '#/definitions/Movie'
-  /movies/{ratings}:
+  /movies/{movieId}:
     get:
       description: get all ratings for a specific movie
       operationId: getRatingsByMovie
@@ -42,13 +44,11 @@ paths:
         - name: Authorization
           in: header
           required: true
-          schema:
-            $ref: '#/definitions/JWT'
-        - name: MovieId
-          in: query
+          type: string
+        - name: movieId
+          in: path
           required: true
-          schema:
-            type: string
+          type: string
       responses:
         '200':
           description: success
@@ -65,26 +65,98 @@ paths:
         - name: Authorization
           in: header
           required: true
-          schema:
-            $ref: '#/definitions/JWT'
-        - name: MovieId
-          in: query
+          type: string
+        - name: movieId
+          in: path
           required: true
-          schema:
-            type: string
+          type: string
         - name: rating
-          in: query
+          in: body
           required: true
           schema:
-            type: string
-        - name: description
-          in: body
-          required: false
+              $ref: '#/definitions/Rating'
+      responses:
+        '201':
+          description: created
           schema:
-            type: string
+            type: object
+  /movies/{movieId}/avg:
+    get:
+      description: get the average rating for a specific movie
+      operationId: getAvgRatingByMovie
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+        - name: movieId
+          in: path
+          required: true
+          type: string
       responses:
         '200':
-          description: created
+          description: success
+          schema:
+            type: object
+  /movies/my-ratings:
+    get:
+      description: get personal ratings
+      operationId: getPersonalRatings
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+      responses:
+        '200':
+          description: success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Rating'
+    put:
+      description: update a rating
+      operationId: updateRating
+      consumes:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+        - name: ratingId
+          in: query
+          requires: true
+          type: string
+        - name: rating
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/Rating'
+      responses:
+        '200':
+          description: updated
+          schema:
+            type: object
+    delete:
+      description: delete a rating
+      operationId: removeRating
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+        - name: ratingId
+          in: query
+          requires: true
+          type: string
+      responses:
+        '200':
+          description: removed
           schema:
             type: object
 definitions:
@@ -111,14 +183,8 @@ definitions:
         type: integer
       user_id:
         type: string
-      movie_id:
-        type: integer
       rating:
         type: integer
       description:
         type: string
-  JWT:
-    type: object
-    properties:
-      jwt:
-        type: string
+
